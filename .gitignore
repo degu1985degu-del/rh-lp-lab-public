@@ -1,0 +1,5 @@
+.DS_Store
+.env
+.env.*
+**/wallet-session.json
+**/config.json

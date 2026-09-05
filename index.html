@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RH Autonomous LP Lab — Public Snapshot</title>
+  <style>
+    :root { color-scheme: dark; --bg:#07090a; --card:#111618; --line:#1f2a2e; --ok:#79eeb2; --muted:#8b9aa0; --text:#e8eef0; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+    header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:24px; }
+    .badge { font: 600 11px/1.2 ui-monospace, monospace; color:#f5d38a; border:1px solid #5a4a22; background:#2a220f; padding:6px 8px; border-radius:999px; }
+    .grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .label { color:var(--muted); font-size:13px; }
+    .val { font-size:28px; font-weight:650; margin-top:10px; letter-spacing:-0.03em; }
+    h1 { font-size:28px; margin:8px 0 0; }
+    h2 { font-size:16px; margin:0 0 12px; }
+    .muted { color:var(--muted); font-size:13px; line-height:1.5; }
+    table { width:100%; border-collapse: collapse; font-size:14px; }
+    th, td { text-align:left; padding:10px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+    code { font-family: ui-monospace, monospace; font-size:12px; }
+    a { color: var(--ok); }
+    .err { color:#ff8f8f; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="muted">RH / Autonomous LP Lab</div>
+      <h1>公開スナップショット</h1>
+      <p class="muted" id="meta">loading…</p>
+    </div>
+    <div class="badge">READ-ONLY / AUTO JSON</div>
+  </header>
+  <div class="grid" id="kpi"></div>
+  <section class="card" style="margin-top:12px">
+    <h2>Timeline</h2>
+    <div id="timeline" class="muted">loading…</div>
+  </section>
+  <section class="card" style="margin-top:12px">
+    <h2>LP</h2>
+    <div id="lp" class="muted">loading…</div>
+  </section>
+  <section class="card" style="margin-top:12px">
+    <h2>Meme</h2>
+    <div id="meme" class="muted">loading…</div>
+  </section>
+  <p class="muted" style="margin-top:18px">このページは取引できません。秘密情報は含みません。データ源: <code>../data/latest.json</code>（GitHub Pagesでは <code>./data/latest.json</code>）</p>
+</main>
+<script>
+async function load() {
+  const urls = ['./data/latest.json', '../data/latest.json'];
+  let data = null, err = null;
+  for (const u of urls) {
+    try {
+      const r = await fetch(u + '?t=' + Date.now());
+      if (r.ok) { data = await r.json(); break; }
+    } catch (e) { err = e; }
+  }
+  if (!data) {
+    document.getElementById('meta').innerHTML = '<span class="err">latest.json を読めません</span>';
+    return;
+  }
+  document.getElementById('meta').textContent = `生成: ${data.generated_at_jst || '?'} / chain ${data.lab?.chain_id} / wallet ${data.lab?.wallet_public}`;
+  const lp = data.lp || {}, meme = data.meme || {}, caps = data.caps || {};
+  document.getElementById('kpi').innerHTML = [
+    ['LP NAV', lp.nav_usd != null ? `$${Number(lp.nav_usd).toFixed(0)}` : '—'],
+    ['LP 稼働', lp.simultaneous_usd != null ? `$${Number(lp.simultaneous_usd).toFixed(0)}` : '—'],
+    ['LP 枠', `${caps.lp_max_positions || 3} / $${caps.lp_simultaneous_usd || 800}`],
+    ['meme コスト', meme.cost_usd != null ? `$${Number(meme.cost_usd).toFixed(0)}` : '—'],
+  ].map(([k,v]) => `<article class="card"><div class="label">${k}</div><div class="val">${v}</div></article>`).join('');
+
+  const pools = (lp.pools || []).map(p => `<tr><td>${p.pair}</td><td>${p.fee || ''}</td><td>${p.role || ''}</td></tr>`).join('');
+  document.getElementById('lp').innerHTML = `<table><thead><tr><th>Pair</th><th>Fee</th><th>Role</th></tr></thead><tbody>${pools}</tbody></table><p class="muted" style="margin-top:8px">status: ${lp.status || '—'} / NFTs: ${(lp.nft_ids||[]).join(', ')}</p>`;
+
+  const pos = (meme.positions || []).map(p => `<tr><td>${p.symbol}</td><td>${p.amount ?? '—'}</td><td>$${p.cost_usdg ?? '—'}</td><td>${p.status || ''}</td></tr>`).join('');
+  document.getElementById('meme').innerHTML = `<table><thead><tr><th>Symbol</th><th>Amount</th><th>Cost</th><th>Status</th></tr></thead><tbody>${pos}</tbody></table><p class="muted" style="margin-top:8px">${meme.marks_note || ''}</p>`;
+
+  const tl = (data.timeline || []).map(e => `<tr><td>${(e.at_jst||'').replace('T',' ').slice(0,16)}</td><td><code>${e.id}</code></td><td>${e.symbol}</td><td>$${e.notional_usd}</td><td><code>${(e.swap_tx||'').slice(0,12)}…</code></td></tr>`).join('');
+  document.getElementById('timeline').innerHTML = `<table><thead><tr><th>JST</th><th>Ticket</th><th>Symbol</th><th>Notional</th><th>Swap</th></tr></thead><tbody>${tl}</tbody></table>`;
+}
+load();
+</script>
+</body>
+</html>
