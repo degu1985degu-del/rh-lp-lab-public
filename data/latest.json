@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-05T23:04:51.568949+09:00",
+  "generated_at_jst": "2026-09-05T23:09:40.882859+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+sm3_post_deploy_snap",
+  "mark_source": "quoter_v2_exit+sm3_altrot_post_snap",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -41,51 +41,10 @@
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
     "source_nav_file": "triple-nav-rpcfail-1788611541164.json",
-    "checked_at_jst": "2026-09-05T21:48:17.214107+09:00"
+    "checked_at_jst": "2026-09-05T23:03:03+09:00"
   },
   "spot": {
-    "positions": [
-      {
-        "symbol": "NVDA",
-        "amount": 1.0824805721727058,
-        "mark_usd": 249.842046,
-        "usd_per_token": 230.8051084725005,
-        "mark_source": "slot0_NVDA/USDG_fee500",
-        "cost_usdg": 0,
-        "cost_note": "ALTROT sell DONE; cost zeroed (was 250)",
-        "unrealized_pnl_usd": 249.842046
-      },
-      {
-        "symbol": "COST",
-        "amount": 0.16282865364078503,
-        "mark_usd": 149.515247,
-        "usd_per_token": 918.2367058940196,
-        "mark_source": "slot0_COST/USDG_fee3000",
-        "cost_usdg": 0,
-        "cost_note": "ALTROT sell DONE; cost zeroed (was 150)",
-        "unrealized_pnl_usd": 149.515247
-      },
-      {
-        "symbol": "TSLA",
-        "amount": 0.6453505010506371,
-        "mark_usd": 229.334121,
-        "usd_per_token": 355.36366714923804,
-        "mark_source": "slot0_TSLA/USDG_fee3000",
-        "cost_usdg": 0,
-        "cost_note": "ALTROT sell DONE; cost zeroed (was 140)",
-        "unrealized_pnl_usd": 229.334121
-      },
-      {
-        "symbol": "AMZN",
-        "amount": 0.5307864457998548,
-        "mark_usd": 137.58501,
-        "usd_per_token": 259.2097272877635,
-        "mark_source": "slot0_AMZN/USDG_fee3000",
-        "cost_usdg": 0,
-        "cost_note": "ALTROT sell DONE; cost zeroed (was 138)",
-        "unrealized_pnl_usd": 137.58501
-      }
-    ],
+    "positions": [],
     "residuals": [
       {
         "symbol": "WETH",
@@ -95,78 +54,69 @@
         "cost_usdg": 187,
         "cost_note": "150+37 FILLED SM3-SPOT buys; primary Spot residual alongside idle USDG",
         "unrealized_pnl_usd": 18.241239
-      },
-      {
-        "symbol": "RBLX",
-        "amount": 3.9457987572441846,
-        "mark_usd": 169.033126,
-        "role": "spot_residual",
-        "cost_usdg": 0,
-        "cost_note": "LP-exit residual sold via ALTROT-0005; cost was unticketed; now zero/closed",
-        "unrealized_pnl_usd": 169.033126
       }
     ],
     "cost_usd": 187.0,
-    "unrealized_pnl_usd": 953.5508,
-    "spot_tokens_sum_usd": 766.276423,
-    "spot_incl_weth_rblx_usd": 1140.550788,
-    "status": "HOLD",
-    "source": "SM3-POST-DEPLOY-SNAP",
+    "unrealized_pnl_usd": 18.2412,
+    "spot_tokens_sum_usd": 0.0,
+    "spot_incl_weth_rblx_usd": 205.241239,
+    "status": "HOLD_USDG",
+    "source": "SM3-ALTROT-POST-SNAP",
     "cost_source": "SPOT-COST-LEDGER",
-    "observed_at_jst": "2026-09-05T21:48:17.214107+09:00"
+    "observed_at_jst": "2026-09-05T23:03:03+09:00"
   },
   "meme": {
     "positions": [
       {
         "symbol": "PONS",
         "cost_usdg": 282.0,
-        "mark_usd": 410.3413,
-        "unrealized_pnl_usd": 128.3413,
+        "mark_usd": 415.1933,
+        "unrealized_pnl_usd": 133.1933,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T23:04:33.099956+09:00",
-        "amount": 361.1495439423197
+        "marks_updated_at_jst": "2026-09-05T23:09:14.013968+09:00",
+        "amount": 450.92745534517303
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 275.0,
-        "mark_usd": 294.5979,
-        "unrealized_pnl_usd": 19.5979,
+        "mark_usd": 281.8012,
+        "unrealized_pnl_usd": 6.8012,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T23:04:33.099956+09:00",
-        "amount": 9605.91060251192
+        "marks_updated_at_jst": "2026-09-05T23:09:14.013968+09:00",
+        "amount": 14376.466376775787
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 282.0,
-        "mark_usd": 287.5737,
-        "unrealized_pnl_usd": 5.5737,
+        "mark_usd": 292.5493,
+        "unrealized_pnl_usd": 10.5493,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T23:04:33.099956+09:00",
-        "amount": 221728.35528329195
+        "marks_updated_at_jst": "2026-09-05T23:09:14.013968+09:00",
+        "amount": 253900.40359643928
       }
     ],
     "cost_usd": 839.0,
-    "mark_usd_exit": 992.5129,
-    "unrealized_pnl_usd": 153.5129,
+    "mark_usd_exit": 989.5438,
+    "unrealized_pnl_usd": 150.5438,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-05T23:04:33.099956+09:00",
+    "marks_updated_at_jst": "2026-09-05T23:09:14.013968+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 2185.712,
-    "idle_usdg_usd": 24.829515,
-    "native_eth_usd": 27.818749,
+    "approx_mtm_usd": 1956.2734,
+    "idle_usdg_usd": 737.097387,
+    "native_eth_usd": 24.391006,
     "weth_usd": 205.241239,
     "surplus_usdg_excluded": null,
-    "note": "approx = spot(incl WETH+RBLX) + meme QuoterV2 exit + idle USDG + native ETH",
+    "note": "approx = spot(WETH residual; stocks sold) + meme QuoterV2 exit + idle USDG + native ETH",
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": 304.022
+    "vs_b0_usd": 74.5834
   },
   "deploy": {
     "status": "STOP",
@@ -175,14 +125,17 @@
       "Spot T2",
       "Spot T3",
       "Meme M1",
-      "Meme M2"
+      "Meme M2",
+      "ALTROT stock sells",
+      "Meme 0012-0014 adds"
     ],
     "aborted": [
       "Meme M3"
     ],
-    "m3_note": "Meme M3 aborted — USDG idle ~$24.83 after failed PONS+$65; Sol wanted ~$57 floor — STOP further buys.",
-    "idle_usdg_usd": 24.829515,
-    "stop_further_buys": true
+    "m3_note": "Post-ALTROT: stocks sold→USDG; meme name-cap adds done; spot HOLD_USDG + WETH hop; STOP further buys.",
+    "idle_usdg_usd": 737.097387,
+    "stop_further_buys": true,
+    "spot_posture": "HOLD_USDG"
   },
   "timeline": [
     {
@@ -325,14 +278,95 @@
       "notional_usd": 65,
       "note": "M3 aborted low USDG; STOP further buys",
       "swap_tx": null
+    },
+    {
+      "id": "SM3-ALTROT-0001-NVDA-SELL",
+      "at_jst": "2026-09-05T22:51:19+09:00",
+      "kind": "spot_sell",
+      "symbol": "NVDA",
+      "notional_usd": null,
+      "note": "ALTROT full NVDA→USDG",
+      "approve_tx": "0xe2b6a12e4d9b88f5f968620a382374c3ace994233b3110b399c28b4a8e35de7e",
+      "swap_tx": "0x0054b0fe3155d3ae3ba8d0521109c99dd8de76249543953755e64be090b5dc59"
+    },
+    {
+      "id": "SM3-ALTROT-0002-COST-SELL",
+      "at_jst": "2026-09-05T22:51:53+09:00",
+      "kind": "spot_sell",
+      "symbol": "COST",
+      "notional_usd": null,
+      "note": "ALTROT full COST→USDG",
+      "approve_tx": "0xf496411cf709f0d88e1b09262424df8d9c407d233d63b6d193afcf511d350404",
+      "swap_tx": "0xec7a953d39a9d330e5f3b2bfc4b921bfbbb8dd4e15d4dc525c4cb21efc642291"
+    },
+    {
+      "id": "SM3-ALTROT-0003-TSLA-SELL",
+      "at_jst": "2026-09-05T22:52:37+09:00",
+      "kind": "spot_sell",
+      "symbol": "TSLA",
+      "notional_usd": null,
+      "note": "ALTROT full TSLA→USDG",
+      "approve_tx": "0xe37fb7b8e4190937291c88275e0e40cc028571cdbb26e24785a54398c197d262",
+      "swap_tx": "0xea74473de40eb8a69a62f9e5fee2d3dcd58671c6ac29583a4c462ff6b6043d84"
+    },
+    {
+      "id": "SM3-ALTROT-0004-AMZN-SELL",
+      "at_jst": "2026-09-05T22:53:22+09:00",
+      "kind": "spot_sell",
+      "symbol": "AMZN",
+      "notional_usd": null,
+      "note": "ALTROT full AMZN→USDG",
+      "approve_tx": "0xb41530f1a1e384aaf6408c5aaef9c77f2297f8a673c5d8cf4ef8ccc78ac4843c",
+      "swap_tx": "0xd59afdf38576e205a1dd72deb008a179fc9cba5a55f1ba0e6a16384caf58f9ae"
+    },
+    {
+      "id": "SM3-ALTROT-0005-RBLX-SELL",
+      "at_jst": "2026-09-05T22:57:13+09:00",
+      "kind": "spot_sell",
+      "symbol": "RBLX",
+      "notional_usd": null,
+      "note": "ALTROT full RBLX→USDG; Spot HOLD_USDG",
+      "approve_tx": "0xdaf943a227e6cbdceec4e9c8123e798f60755c361340de0104d2a47175227c68",
+      "swap_tx": "0xb1a87b7b93fc4bd3fa77c54e5ba48fedc8a07325751307676b443afb8d151455"
+    },
+    {
+      "id": "SM3-MEME-0012-PONS",
+      "at_jst": "2026-09-05T22:59:08+09:00",
+      "kind": "meme_buy",
+      "symbol": "PONS",
+      "notional_usd": 82,
+      "note": "ALTROT meme add; cost→282",
+      "approve_tx": "0xb68299289e6d77137fab89d45d03f3d5929f4647d9d65537ceaefd8621e5902a",
+      "swap_tx": "0xbf306873938b2bc2396ae323719bb1f775c7f093fb579971f0d719c9c41f93d7"
+    },
+    {
+      "id": "SM3-MEME-0013-NUDES",
+      "at_jst": "2026-09-05T22:59:50+09:00",
+      "kind": "meme_buy",
+      "symbol": "NUDES",
+      "notional_usd": 100,
+      "note": "ALTROT meme add; cost→275",
+      "approve_tx": "0x671a57e87f1faf4b69ae074c6aa8da69d959664945c23b50211d085ef3b9d0f5",
+      "swap_tx": "0x9464c0ac78901212b3b408ec047cfd19b0da7d2bc409f4b1300660c2fbec9650"
+    },
+    {
+      "id": "SM3-MEME-0014-NEKO",
+      "at_jst": "2026-09-05T23:00:26+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 37,
+      "note": "ALTROT meme add; cost→282; no further buys",
+      "approve_tx": "0xc472d6568b16e6c4fc31af84797e8070642a6f0f4d76610faa52056b90fe4e86",
+      "swap_tx": "0x3ba80c3678b29424daed8b8ea668d7d60e549c317931885358f14111702301ef"
     }
   ],
   "notes": [
     "No secrets. No Alchemy keys. No session material.",
-    "Post-SM3: LP EXITED/CLEARED. Spot 52% + Meme 46% + Gas 2%.",
-    "Spot cost_usdg from handoff/SPOT-COST-LEDGER (FILLED SM3-SPOT buys); RBLX cost null (LP-exit residual).",
+    "Post-SM3 + ALTROT: LP EXITED/CLEARED. Spot HOLD_USDG + WETH hop; stocks sold.",
+    "Balances from SM3-ALTROT-POST-SNAP live FACT when present.",
+    "Spot cost_usdg from handoff/SPOT-COST-LEDGER; sold stocks cost-zeroed / omitted.",
     "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
-    "Deploy STOP after Spot T1-T3 + Meme M1-M2; M3 aborted (low USDG).",
+    "Deploy STOP; no new spot alts / meme adds until Chief.",
     "Refreshed roughly every 5 minutes when publish routine runs."
   ]
 }
