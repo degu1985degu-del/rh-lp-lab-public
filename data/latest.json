@@ -1,8 +1,9 @@
 {
-  "schema_version": 1,
-  "generated_at_jst": "2026-09-05T16:40:26.703749+09:00",
+  "schema_version": 2,
+  "generated_at_jst": "2026-09-05T16:45:54.071589+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
-  "live": false,
+  "live": true,
+  "mark_source": "quoter_v2_exit+triple_nav",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -43,46 +44,61 @@
       }
     ],
     "status": "HOLD",
-    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1638.json"
+    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1638.json",
+    "checked_at_jst": "2026-09-05T16:38:58.981+09:00"
   },
   "meme": {
     "positions": [
       {
         "symbol": "PONS",
-        "amount": 137.38410797460645,
         "cost_usdg": 100.0,
+        "mark_usd": 105.4404,
+        "unrealized_pnl_usd": 5.4404,
         "status": "HOLD",
-        "mark_usd": 101.4697,
-        "unrealized_pnl_usd": 1.4697
+        "mark_source": "quoter_v2_exit",
+        "marks_updated_at_jst": "2026-09-05T16:45:08.107256+09:00"
       },
       {
         "symbol": "NUDES",
-        "amount": 4549.879600742322,
         "cost_usdg": 75.0,
+        "mark_usd": 65.905,
+        "unrealized_pnl_usd": -9.095,
         "status": "HOLD",
-        "mark_usd": 56.3694,
-        "unrealized_pnl_usd": -18.6306
+        "mark_source": "quoter_v2_exit",
+        "marks_updated_at_jst": "2026-09-05T16:45:08.107256+09:00"
       },
       {
         "symbol": "MEME",
-        "amount": 1221.4875823363075,
         "cost_usdg": 75.0,
+        "mark_usd": 53.8734,
+        "unrealized_pnl_usd": -21.1266,
         "status": "HOLD",
-        "mark_usd": 48.4817,
-        "unrealized_pnl_usd": -26.5183
+        "mark_source": "quoter_v2_exit",
+        "marks_updated_at_jst": "2026-09-05T16:45:08.107256+09:00"
       },
       {
         "symbol": "NEKO",
-        "amount": 62655.35692545139,
         "cost_usdg": 50.0,
+        "mark_usd": 30.9429,
+        "unrealized_pnl_usd": -19.0571,
         "status": "HOLD",
-        "mark_usd": 22.8771,
-        "unrealized_pnl_usd": -27.1229
+        "mark_source": "quoter_v2_exit",
+        "marks_updated_at_jst": "2026-09-05T16:45:51.318178+09:00"
       }
     ],
     "cost_usd": 300.0,
+    "mark_usd_exit": 256.1617,
+    "unrealized_pnl_usd": -43.8383,
     "status": "HOLD",
-    "marks_note": "Any mark/PnL fields are INFERENCE unless explicitly labeled on-chain"
+    "soft_alert_active": true,
+    "marks_updated_at_jst": "2026-09-05T16:45:51.318178+09:00",
+    "marks_note": "Exit marks via QuoterV2 full-size (soft-alert metric)"
+  },
+  "wallet": {
+    "approx_mtm_usd": 1056.7531,
+    "note": "approx = LP nav + meme exit marks; idle USDG/ETH may be partly inside LP nav file",
+    "b0_frozen_usd": 1881.69,
+    "target_5x_usd": 9408.45
   },
   "timeline": [
     {
@@ -124,6 +140,7 @@
   ],
   "notes": [
     "No secrets. No Alchemy keys. No session material.",
-    "LP NAV and meme cost are separate books sharing one physical wallet."
+    "LP NAV and meme cost are separate books sharing one physical wallet.",
+    "Refreshed roughly every 5 minutes when publish routine runs."
   ]
 }
