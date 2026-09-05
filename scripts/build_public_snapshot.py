@@ -38,6 +38,15 @@ KNOWN_FILLS = [
         "approve_tx": "0xfe3bde0c473eb1725842ced0da6cac1bae24d9994833ded071df7657a510aa06",
         "swap_tx": "0x8dbd6224539831e2f85c6abbcf43a371c5a1da3f2500963f958cd20a9657535f",
     },
+    {
+        "id": "MEME-CANARY-0005",
+        "at_jst": "2026-09-05T12:53:00+09:00",
+        "kind": "meme_buy",
+        "symbol": "NEKO",
+        "notional_usd": 50,
+        "approve_tx": "0x075da7bc66da9d1d2d884f0bab23fe7733d1809775149f477266618f9c48757b",
+        "swap_tx": "0xfadfee8af7aa2e4f6ddbe05e2c43531a03147b05f99b37f4f7dce072664cbc8b",
+    },
 ]
 
 
