@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_jst": "2026-09-05T16:33:59.938389+09:00",
+  "generated_at_jst": "2026-09-05T16:40:26.703749+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": false,
   "lab": {
@@ -17,8 +17,8 @@
     "meme_sleeve_usd": 1000
   },
   "lp": {
-    "simultaneous_usd": 763.3052359543769,
-    "nav_usd": 800.6632965221062,
+    "simultaneous_usd": 763.1472724395089,
+    "nav_usd": 800.5913628136854,
     "start_nav_usd": 808.2457325458153,
     "nft_ids": [
       986899,
@@ -43,7 +43,7 @@
       }
     ],
     "status": "HOLD",
-    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1536.json"
+    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1638.json"
   },
   "meme": {
     "positions": [
