@@ -138,7 +138,11 @@ def normalize_altrot_to_canonical(alt: dict, deploy: dict) -> dict:
     spot_tokens_sum = 0.0
 
     meme_positions = []
-    for sym in ("PONS", "NUDES", "NEKO"):
+    # Prefer keys present on ALTROT meme map (includes CASHCAT after autonomy adds)
+    syms = [s for s in meme_amts.keys() if isinstance(s, str) and s.upper() != "SUM"]
+    if not syms:
+        syms = ["PONS", "NUDES", "NEKO"]
+    for sym in syms:
         amt = _f(meme_amts.get(sym))
         if amt is None:
             amt = _live_human(live, sym)
@@ -246,8 +250,9 @@ def public_positions(raw, amount_by_sym=None):
         if not isinstance(p, dict):
             continue
         sym = p.get("symbol")
-        if sym not in ("PONS", "NUDES", "NEKO"):
+        if not sym:
             continue
+        # Allow any open meme in STATE (PONS/NUDES/NEKO/CASHCAT/…)
         row = {
             "symbol": sym,
             "cost_usdg": p.get("cost_usdg"),
