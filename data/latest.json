@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_jst": "2026-09-05T18:47:35.379700+09:00",
+  "generated_at_jst": "2026-09-05T18:50:35.487397+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+triple_nav",
@@ -18,8 +18,8 @@
     "meme_sleeve_usd": 1000
   },
   "lp": {
-    "simultaneous_usd": 763.0934127897303,
-    "nav_usd": 800.5616024998468,
+    "simultaneous_usd": 763.0908896746023,
+    "nav_usd": 800.5537040883246,
     "start_nav_usd": 808.2457325458153,
     "nft_ids": [
       986899,
@@ -44,58 +44,58 @@
       }
     ],
     "status": "HOLD",
-    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1847.json",
-    "checked_at_jst": "2026-09-05T18:47:35.352+09:00"
+    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1850.json",
+    "checked_at_jst": "2026-09-05T18:50:35.458+09:00"
   },
   "meme": {
     "positions": [
       {
         "symbol": "PONS",
         "cost_usdg": 100.0,
-        "mark_usd": 120.0213,
-        "unrealized_pnl_usd": 20.0213,
+        "mark_usd": 119.8792,
+        "unrealized_pnl_usd": 19.8792,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T18:47:29.104062+09:00"
+        "marks_updated_at_jst": "2026-09-05T18:50:29.196241+09:00"
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 75.0,
-        "mark_usd": 62.1867,
-        "unrealized_pnl_usd": -12.8133,
+        "mark_usd": 63.3735,
+        "unrealized_pnl_usd": -11.6265,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T18:47:29.104062+09:00"
+        "marks_updated_at_jst": "2026-09-05T18:50:29.196241+09:00"
       },
       {
         "symbol": "MEME",
         "cost_usdg": 75.0,
-        "mark_usd": 57.1486,
-        "unrealized_pnl_usd": -17.8514,
+        "mark_usd": 57.7575,
+        "unrealized_pnl_usd": -17.2425,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T18:47:29.104062+09:00"
+        "marks_updated_at_jst": "2026-09-05T18:50:29.196241+09:00"
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 50.0,
-        "mark_usd": 46.8432,
-        "unrealized_pnl_usd": -3.1568,
+        "mark_usd": 49.4875,
+        "unrealized_pnl_usd": -0.5125,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T18:47:29.104062+09:00"
+        "marks_updated_at_jst": "2026-09-05T18:50:29.196241+09:00"
       }
     ],
     "cost_usd": 300.0,
-    "mark_usd_exit": 286.1998,
-    "unrealized_pnl_usd": -13.8002,
+    "mark_usd_exit": 290.4977,
+    "unrealized_pnl_usd": -9.5023,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-05T18:47:29.104062+09:00",
+    "marks_updated_at_jst": "2026-09-05T18:50:29.196241+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size (soft-alert metric)"
   },
   "wallet": {
-    "approx_mtm_usd": 1932.2888,
+    "approx_mtm_usd": 1936.5788,
     "surplus_usdg_excluded": 845.527362,
     "note": "approx = LP nav (+ idle ETH inside nav) + surplus USDG + meme QuoterV2 exit marks",
     "b0_frozen_usd": 1881.69,
