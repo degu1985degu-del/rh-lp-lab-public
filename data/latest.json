@@ -1,15 +1,29 @@
 {
-  "schema_version": 2,
-  "generated_at_jst": "2026-09-05T22:02:18.555609+09:00",
+  "schema_version": 3,
+  "generated_at_jst": "2026-09-05T22:08:12.410478+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+triple_nav",
+  "mark_source": "quoter_v2_exit+sm3_post_deploy_snap",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
     "dex": "uniswap-v3",
     "wallet_public": "0xeb2e…4c7b",
     "leverage": false
+  },
+  "mandate": {
+    "plan": "SM3-52/46/02",
+    "b0_usd": 1881.69,
+    "target_3x_usd": 5645.07,
+    "primary_target_multiple": 3,
+    "target_5x_usd": 9408.45,
+    "split": {
+      "spot_pct": 52,
+      "meme_pct": 46,
+      "gas_pct": 2,
+      "perp_pct": 0,
+      "lp_pct": 0
+    }
   },
   "caps": {
     "lp_simultaneous_usd": 800,
@@ -18,79 +32,136 @@
     "meme_sleeve_usd": 1000
   },
   "lp": {
-    "simultaneous_usd": null,
-    "nav_usd": null,
+    "simultaneous_usd": 0,
+    "nav_usd": 0.0,
     "start_nav_usd": null,
-    "nft_ids": [
-      986899,
-      1002007,
-      1016424
-    ],
-    "pools": [
+    "nft_ids": [],
+    "pools": [],
+    "note": "LP canary NFTs burned in SM3 exit; not live",
+    "status": "EXITED/CLEARED",
+    "npm_balanceOf": 0,
+    "source_nav_file": "triple-nav-rpcfail-1788611541164.json",
+    "checked_at_jst": "2026-09-05T21:48:17.214107+09:00"
+  },
+  "spot": {
+    "positions": [
       {
-        "pair": "WETH/USDG",
-        "fee": "0.01%",
-        "role": "hub"
+        "symbol": "NVDA",
+        "amount": 1.0824805721727058,
+        "mark_usd": 249.842046,
+        "usd_per_token": 230.8051084725005,
+        "mark_source": "slot0_NVDA/USDG_fee500"
       },
       {
-        "pair": "USDG/RBLX",
-        "fee": "0.3%",
-        "role": "farm"
+        "symbol": "COST",
+        "amount": 0.16282865364078503,
+        "mark_usd": 149.515247,
+        "usd_per_token": 918.2367058940196,
+        "mark_source": "slot0_COST/USDG_fee3000"
       },
       {
-        "pair": "DJT/USDG",
-        "fee": "1%",
-        "role": "farm"
+        "symbol": "TSLA",
+        "amount": 0.6453505010506371,
+        "mark_usd": 229.334121,
+        "usd_per_token": 355.36366714923804,
+        "mark_source": "slot0_TSLA/USDG_fee3000"
+      },
+      {
+        "symbol": "AMZN",
+        "amount": 0.5307864457998548,
+        "mark_usd": 137.58501,
+        "usd_per_token": 259.2097272877635,
+        "mark_source": "slot0_AMZN/USDG_fee3000"
       }
     ],
+    "residuals": [
+      {
+        "symbol": "WETH",
+        "amount": 0.0834072690659469,
+        "mark_usd": 205.241239,
+        "role": "spot_residual"
+      },
+      {
+        "symbol": "RBLX",
+        "amount": 3.9457987572441846,
+        "mark_usd": 169.033126,
+        "role": "spot_residual"
+      }
+    ],
+    "spot_tokens_sum_usd": 766.276423,
+    "spot_incl_weth_rblx_usd": 1140.550788,
     "status": "HOLD",
-    "source_nav_file": "triple-nav-rpcfail-1788611541164.json",
-    "checked_at_jst": "2026-09-05T21:32:21.163+09:00"
+    "source": "SM3-POST-DEPLOY-SNAP",
+    "observed_at_jst": "2026-09-05T21:48:17.214107+09:00"
   },
   "meme": {
     "positions": [
       {
         "symbol": "PONS",
         "cost_usdg": 200.0,
-        "mark_usd": 122.9369,
-        "unrealized_pnl_usd": -77.0631,
+        "mark_usd": 320.1118,
+        "unrealized_pnl_usd": 120.1118,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:02:00.173857+09:00"
+        "marks_updated_at_jst": "2026-09-05T22:07:52.490493+09:00",
+        "amount": 361.1495439423197
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 175.0,
-        "mark_usd": 81.123,
-        "unrealized_pnl_usd": -93.877,
+        "mark_usd": 184.1858,
+        "unrealized_pnl_usd": 9.1858,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:02:00.173857+09:00"
+        "marks_updated_at_jst": "2026-09-05T22:07:52.490493+09:00",
+        "amount": 9605.91060251192
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 245.0,
-        "mark_usd": 58.8304,
-        "unrealized_pnl_usd": -186.1696,
+        "mark_usd": 190.8216,
+        "unrealized_pnl_usd": -54.1784,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:02:00.173857+09:00"
+        "marks_updated_at_jst": "2026-09-05T22:07:52.490493+09:00",
+        "amount": 221728.35528329195
       }
     ],
     "cost_usd": 620.0,
-    "mark_usd_exit": 262.8903,
-    "unrealized_pnl_usd": -357.1097,
+    "mark_usd_exit": 695.1192,
+    "unrealized_pnl_usd": 75.1192,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-05T22:02:00.173857+09:00",
-    "marks_note": "Exit marks via QuoterV2 full-size (soft-alert metric)"
+    "marks_updated_at_jst": "2026-09-05T22:07:52.490493+09:00",
+    "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": null,
+    "approx_mtm_usd": 1888.3183,
+    "idle_usdg_usd": 24.829515,
+    "native_eth_usd": 27.818749,
+    "weth_usd": 205.241239,
     "surplus_usdg_excluded": null,
-    "note": "approx = LP nav (+ idle ETH inside nav) + surplus USDG + meme QuoterV2 exit marks",
+    "note": "approx = spot(incl WETH+RBLX) + meme QuoterV2 exit + idle USDG + native ETH",
     "b0_frozen_usd": 1881.69,
-    "target_5x_usd": 9408.45
+    "target_3x_usd": 5645.07,
+    "target_5x_usd": 9408.45,
+    "vs_b0_usd": 6.6283
+  },
+  "deploy": {
+    "status": "STOP",
+    "completed": [
+      "Spot T1",
+      "Spot T2",
+      "Spot T3",
+      "Meme M1",
+      "Meme M2"
+    ],
+    "aborted": [
+      "Meme M3"
+    ],
+    "m3_note": "Meme M3 aborted — USDG idle ~$24.83 after failed PONS+$65; Sol wanted ~$57 floor — STOP further buys.",
+    "idle_usdg_usd": 24.829515,
+    "stop_further_buys": true
   },
   "timeline": [
     {
@@ -128,11 +199,118 @@
       "notional_usd": 50,
       "approve_tx": "0x075da7bc66da9d1d2d884f0bab23fe7733d1809775149f477266618f9c48757b",
       "swap_tx": "0xfadfee8af7aa2e4f6ddbe05e2c43531a03147b05f99b37f4f7dce072664cbc8b"
+    },
+    {
+      "id": "SM3-EXIT-0001-DJT",
+      "at_jst": "2026-09-05T20:41:03+09:00",
+      "kind": "lp_exit",
+      "symbol": "DJT/USDG",
+      "notional_usd": null,
+      "note": "NFT 1016424 burned",
+      "swap_tx": "0x0ecb5e750958ea31c52a2a18c5335c72e208d785fcbe08177474b5210cf21407"
+    },
+    {
+      "id": "SM3-EXIT-0002-RBLX",
+      "at_jst": "2026-09-05T20:46:42+09:00",
+      "kind": "lp_exit",
+      "symbol": "USDG/RBLX",
+      "notional_usd": null,
+      "note": "NFT 1002007 burned",
+      "swap_tx": "0xd8350131134f1c7079758098c70f98f564a2de028c9e88d4bfb8823158194cee"
+    },
+    {
+      "id": "SM3-EXIT-0003-HUB",
+      "at_jst": "2026-09-05T20:48:25+09:00",
+      "kind": "lp_exit",
+      "symbol": "WETH/USDG",
+      "notional_usd": null,
+      "note": "NFT 986899 burned; LP EXITED/CLEARED",
+      "swap_tx": "0x57bf3262cd57c57e3969d3ad9710a14e518845c57820155d7898479a829a299b"
+    },
+    {
+      "id": "SM3-MEME-0005B",
+      "at_jst": "2026-09-05T21:09:30+09:00",
+      "kind": "meme_sell",
+      "symbol": "MEME",
+      "notional_usd": null,
+      "note": "MEME sold to USDG",
+      "approve_tx": "0x05e131418dca6f4a6b3f5b9259b5add39f64ae6d22978ae3bc5f25ec8180a309",
+      "swap_tx": "0x533a9c40d8266d5de8717f7119ff689568c99d250db5b32e3bbbae41cdfc8f15"
+    },
+    {
+      "id": "SM3-SPOT-0003-NVDA",
+      "at_jst": "2026-09-05T21:13:26+09:00",
+      "kind": "spot_buy",
+      "symbol": "NVDA",
+      "notional_usd": 180,
+      "swap_tx": "0xaa322e8a697b50c00aaf689113b01bb309af56332825f8a812248ad0bcb1d6cb"
+    },
+    {
+      "id": "SM3-MEME-0006-NEKO",
+      "at_jst": "2026-09-05T21:19:15+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 100,
+      "swap_tx": "0x09fa0d4c06425fd4678289cf5ff20e2a7c10b12ed25bee8028ec2dda8487d41e"
+    },
+    {
+      "id": "SM3-MEME-0007-PONS",
+      "at_jst": "2026-09-05T21:20:13+09:00",
+      "kind": "meme_buy",
+      "symbol": "PONS",
+      "notional_usd": 100,
+      "swap_tx": "0x734d6472884b86078355d9b215c72fb299a89599dfaef529e3369d26982cf916"
+    },
+    {
+      "id": "SM3-SPOT-T2-AMZN",
+      "at_jst": "2026-09-05T21:23:01+09:00",
+      "kind": "spot_buy",
+      "symbol": "AMZN",
+      "notional_usd": 100,
+      "note": "Spot T2",
+      "swap_tx": "0x574dec34b3c60126d552e80325b8b8633ac4c7d0b6264af3aa60e053f96a01a2"
+    },
+    {
+      "id": "SM3-MEME-0008-NUDES",
+      "at_jst": "2026-09-05T21:28:09+09:00",
+      "kind": "meme_buy",
+      "symbol": "NUDES",
+      "notional_usd": 100,
+      "swap_tx": "0x40edcf159ff94d3aea062cb23c7e84c21d984787e7fdd37373d7ff7114849098"
+    },
+    {
+      "id": "SM3-MEME-0009-NEKO",
+      "at_jst": "2026-09-05T21:28:39+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 95,
+      "note": "Meme M2 complete",
+      "swap_tx": "0x7f461ca23d0c1baf2b00ea66415d283a47acd5425972b43d0f337eb3741d48ed"
+    },
+    {
+      "id": "SM3-SPOT-0011-AMZN",
+      "at_jst": "2026-09-05T21:35:58+09:00",
+      "kind": "spot_buy",
+      "symbol": "AMZN",
+      "notional_usd": 38,
+      "note": "Spot T3 complete; deploy STOP",
+      "swap_tx": "0x2f1565593f6e947249c1091d77354c8f7e44a47c939ce6b64426b06e2ba33f4f"
+    },
+    {
+      "id": "SM3-MEME-0010-PONS",
+      "at_jst": "2026-09-05T21:40:00+09:00",
+      "kind": "meme_buy_aborted",
+      "symbol": "PONS",
+      "notional_usd": 65,
+      "note": "M3 aborted low USDG; STOP further buys",
+      "swap_tx": null
     }
   ],
   "notes": [
     "No secrets. No Alchemy keys. No session material.",
-    "LP NAV and meme cost are separate books sharing one physical wallet.",
+    "Post-SM3: LP EXITED/CLEARED. Spot 52% + Meme 46% + Gas 2%.",
+    "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
+    "Deploy STOP after Spot T1-T3 + Meme M1-M2; M3 aborted (low USDG).",
     "Refreshed roughly every 5 minutes when publish routine runs."
   ]
 }
