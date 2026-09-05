@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_jst": "2026-09-05T14:02:56.274520+09:00",
+  "generated_at_jst": "2026-09-05T16:19:16.838637+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": false,
   "lab": {
@@ -17,8 +17,8 @@
     "meme_sleeve_usd": 1000
   },
   "lp": {
-    "simultaneous_usd": 763.331654410295,
-    "nav_usd": 800.6660633459844,
+    "simultaneous_usd": 763.3052359543769,
+    "nav_usd": 800.6632965221062,
     "start_nav_usd": 808.2457325458153,
     "nft_ids": [
       986899,
@@ -43,7 +43,7 @@
       }
     ],
     "status": "HOLD",
-    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1342.json"
+    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1536.json"
   },
   "meme": {
     "positions": [
@@ -52,32 +52,32 @@
         "amount": 137.38410797460645,
         "cost_usdg": 100.0,
         "status": "HOLD",
-        "mark_usd": 96.8008,
-        "unrealized_pnl_usd": -3.1992
+        "mark_usd": 101.4697,
+        "unrealized_pnl_usd": 1.4697
       },
       {
         "symbol": "NUDES",
         "amount": 4549.879600742322,
         "cost_usdg": 75.0,
         "status": "HOLD",
-        "mark_usd": 56.1455,
-        "unrealized_pnl_usd": -18.8545
+        "mark_usd": 56.3694,
+        "unrealized_pnl_usd": -18.6306
       },
       {
         "symbol": "MEME",
         "amount": 1221.4875823363075,
         "cost_usdg": 75.0,
         "status": "HOLD",
-        "mark_usd": 47.2105,
-        "unrealized_pnl_usd": -27.7895
+        "mark_usd": 48.4817,
+        "unrealized_pnl_usd": -26.5183
       },
       {
         "symbol": "NEKO",
         "amount": 62655.35692545139,
         "cost_usdg": 50.0,
         "status": "HOLD",
-        "mark_usd": 41.9728,
-        "unrealized_pnl_usd": -8.0272
+        "mark_usd": 22.8771,
+        "unrealized_pnl_usd": -27.1229
       }
     ],
     "cost_usd": 300.0,
