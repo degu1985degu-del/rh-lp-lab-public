@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-05T22:30:20.805189+09:00",
+  "generated_at_jst": "2026-09-05T22:31:50.901701+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+sm3_post_deploy_snap",
@@ -50,28 +50,40 @@
         "amount": 1.0824805721727058,
         "mark_usd": 249.842046,
         "usd_per_token": 230.8051084725005,
-        "mark_source": "slot0_NVDA/USDG_fee500"
+        "mark_source": "slot0_NVDA/USDG_fee500",
+        "cost_usdg": 250,
+        "cost_note": "180+70 FILLED SM3-SPOT buys",
+        "unrealized_pnl_usd": -0.157954
       },
       {
         "symbol": "COST",
         "amount": 0.16282865364078503,
         "mark_usd": 149.515247,
         "usd_per_token": 918.2367058940196,
-        "mark_source": "slot0_COST/USDG_fee3000"
+        "mark_source": "slot0_COST/USDG_fee3000",
+        "cost_usdg": 150,
+        "cost_note": "100+50 FILLED SM3-SPOT buys",
+        "unrealized_pnl_usd": -0.484753
       },
       {
         "symbol": "TSLA",
         "amount": 0.6453505010506371,
         "mark_usd": 229.334121,
         "usd_per_token": 355.36366714923804,
-        "mark_source": "slot0_TSLA/USDG_fee3000"
+        "mark_source": "slot0_TSLA/USDG_fee3000",
+        "cost_usdg": 140,
+        "cost_note": "90+50 FILLED SM3-SPOT buys",
+        "unrealized_pnl_usd": 89.334121
       },
       {
         "symbol": "AMZN",
         "amount": 0.5307864457998548,
         "mark_usd": 137.58501,
         "usd_per_token": 259.2097272877635,
-        "mark_source": "slot0_AMZN/USDG_fee3000"
+        "mark_source": "slot0_AMZN/USDG_fee3000",
+        "cost_usdg": 138,
+        "cost_note": "100+38 FILLED SM3-SPOT buys",
+        "unrealized_pnl_usd": -0.41499
       }
     ],
     "residuals": [
@@ -79,19 +91,28 @@
         "symbol": "WETH",
         "amount": 0.0834072690659469,
         "mark_usd": 205.241239,
-        "role": "spot_residual"
+        "role": "spot_residual",
+        "cost_usdg": 187,
+        "cost_note": "150+37 FILLED SM3-SPOT buys (residual spot)",
+        "unrealized_pnl_usd": 18.241239
       },
       {
         "symbol": "RBLX",
         "amount": 3.9457987572441846,
         "mark_usd": 169.033126,
-        "role": "spot_residual"
+        "role": "spot_residual",
+        "cost_usdg": null,
+        "cost_note": "LP-exit residual, cost not ticketed as spot buy",
+        "unrealized_pnl_usd": null
       }
     ],
+    "cost_usd": 865.0,
+    "unrealized_pnl_usd": 106.5177,
     "spot_tokens_sum_usd": 766.276423,
     "spot_incl_weth_rblx_usd": 1140.550788,
     "status": "HOLD",
     "source": "SM3-POST-DEPLOY-SNAP",
+    "cost_source": "SPOT-COST-LEDGER",
     "observed_at_jst": "2026-09-05T21:48:17.214107+09:00"
   },
   "meme": {
@@ -99,44 +120,44 @@
       {
         "symbol": "PONS",
         "cost_usdg": 200.0,
-        "mark_usd": 321.3383,
-        "unrealized_pnl_usd": 121.3383,
+        "mark_usd": 321.4329,
+        "unrealized_pnl_usd": 121.4329,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:30:03.203460+09:00",
+        "marks_updated_at_jst": "2026-09-05T22:31:33.712199+09:00",
         "amount": 361.1495439423197
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 175.0,
-        "mark_usd": 197.5327,
-        "unrealized_pnl_usd": 22.5327,
+        "mark_usd": 196.5884,
+        "unrealized_pnl_usd": 21.5884,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:30:03.203460+09:00",
+        "marks_updated_at_jst": "2026-09-05T22:31:33.712199+09:00",
         "amount": 9605.91060251192
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 245.0,
-        "mark_usd": 262.6902,
-        "unrealized_pnl_usd": 17.6902,
+        "mark_usd": 273.1368,
+        "unrealized_pnl_usd": 28.1368,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-05T22:30:03.203460+09:00",
+        "marks_updated_at_jst": "2026-09-05T22:31:33.712199+09:00",
         "amount": 221728.35528329195
       }
     ],
     "cost_usd": 620.0,
-    "mark_usd_exit": 781.5612,
-    "unrealized_pnl_usd": 161.5612,
+    "mark_usd_exit": 791.1581,
+    "unrealized_pnl_usd": 171.1581,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-05T22:30:03.203460+09:00",
+    "marks_updated_at_jst": "2026-09-05T22:31:33.712199+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1974.7603,
+    "approx_mtm_usd": 1984.3572,
     "idle_usdg_usd": 24.829515,
     "native_eth_usd": 27.818749,
     "weth_usd": 205.241239,
@@ -145,7 +166,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": 93.0703
+    "vs_b0_usd": 102.6672
   },
   "deploy": {
     "status": "STOP",
@@ -309,6 +330,7 @@
   "notes": [
     "No secrets. No Alchemy keys. No session material.",
     "Post-SM3: LP EXITED/CLEARED. Spot 52% + Meme 46% + Gas 2%.",
+    "Spot cost_usdg from handoff/SPOT-COST-LEDGER (FILLED SM3-SPOT buys); RBLX cost null (LP-exit residual).",
     "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
     "Deploy STOP after Spot T1-T3 + Meme M1-M2; M3 aborted (low USDG).",
     "Refreshed roughly every 5 minutes when publish routine runs."
