@@ -1,0 +1,123 @@
+{
+  "mandate_defaults": {
+    "plan": "SM3-52/46/02",
+    "b0_usd": 1881.69,
+    "target_3x_usd": 5645.07,
+    "primary_target_multiple": 3,
+    "target_5x_usd": 9408.45,
+    "split": {
+      "spot_pct": 52,
+      "meme_pct": 46,
+      "gas_pct": 2,
+      "perp_pct": 0,
+      "lp_pct": 0
+    }
+  },
+  "sm3_timeline_extra": [
+    {
+      "id": "SM3-EXIT-0001-DJT",
+      "at_jst": "2026-09-05T20:41:03+09:00",
+      "kind": "lp_exit",
+      "symbol": "DJT/USDG",
+      "notional_usd": null,
+      "note": "NFT 1016424 burned",
+      "swap_tx": "0x0ecb5e750958ea31c52a2a18c5335c72e208d785fcbe08177474b5210cf21407"
+    },
+    {
+      "id": "SM3-EXIT-0002-RBLX",
+      "at_jst": "2026-09-05T20:46:42+09:00",
+      "kind": "lp_exit",
+      "symbol": "USDG/RBLX",
+      "notional_usd": null,
+      "note": "NFT 1002007 burned",
+      "swap_tx": "0xd8350131134f1c7079758098c70f98f564a2de028c9e88d4bfb8823158194cee"
+    },
+    {
+      "id": "SM3-EXIT-0003-HUB",
+      "at_jst": "2026-09-05T20:48:25+09:00",
+      "kind": "lp_exit",
+      "symbol": "WETH/USDG",
+      "notional_usd": null,
+      "note": "NFT 986899 burned; LP EXITED/CLEARED",
+      "swap_tx": "0x57bf3262cd57c57e3969d3ad9710a14e518845c57820155d7898479a829a299b"
+    },
+    {
+      "id": "SM3-MEME-0005B",
+      "at_jst": "2026-09-05T21:09:30+09:00",
+      "kind": "meme_sell",
+      "symbol": "MEME",
+      "notional_usd": null,
+      "note": "MEME sold to USDG",
+      "approve_tx": "0x05e131418dca6f4a6b3f5b9259b5add39f64ae6d22978ae3bc5f25ec8180a309",
+      "swap_tx": "0x533a9c40d8266d5de8717f7119ff689568c99d250db5b32e3bbbae41cdfc8f15"
+    },
+    {
+      "id": "SM3-SPOT-0003-NVDA",
+      "at_jst": "2026-09-05T21:13:26+09:00",
+      "kind": "spot_buy",
+      "symbol": "NVDA",
+      "notional_usd": 180,
+      "swap_tx": "0xaa322e8a697b50c00aaf689113b01bb309af56332825f8a812248ad0bcb1d6cb"
+    },
+    {
+      "id": "SM3-MEME-0006-NEKO",
+      "at_jst": "2026-09-05T21:19:15+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 100,
+      "swap_tx": "0x09fa0d4c06425fd4678289cf5ff20e2a7c10b12ed25bee8028ec2dda8487d41e"
+    },
+    {
+      "id": "SM3-MEME-0007-PONS",
+      "at_jst": "2026-09-05T21:20:13+09:00",
+      "kind": "meme_buy",
+      "symbol": "PONS",
+      "notional_usd": 100,
+      "swap_tx": "0x734d6472884b86078355d9b215c72fb299a89599dfaef529e3369d26982cf916"
+    },
+    {
+      "id": "SM3-SPOT-T2-AMZN",
+      "at_jst": "2026-09-05T21:23:01+09:00",
+      "kind": "spot_buy",
+      "symbol": "AMZN",
+      "notional_usd": 100,
+      "note": "Spot T2",
+      "swap_tx": "0x574dec34b3c60126d552e80325b8b8633ac4c7d0b6264af3aa60e053f96a01a2"
+    },
+    {
+      "id": "SM3-MEME-0008-NUDES",
+      "at_jst": "2026-09-05T21:28:09+09:00",
+      "kind": "meme_buy",
+      "symbol": "NUDES",
+      "notional_usd": 100,
+      "swap_tx": "0x40edcf159ff94d3aea062cb23c7e84c21d984787e7fdd37373d7ff7114849098"
+    },
+    {
+      "id": "SM3-MEME-0009-NEKO",
+      "at_jst": "2026-09-05T21:28:39+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 95,
+      "note": "Meme M2 complete",
+      "swap_tx": "0x7f461ca23d0c1baf2b00ea66415d283a47acd5425972b43d0f337eb3741d48ed"
+    },
+    {
+      "id": "SM3-SPOT-0011-AMZN",
+      "at_jst": "2026-09-05T21:35:58+09:00",
+      "kind": "spot_buy",
+      "symbol": "AMZN",
+      "notional_usd": 38,
+      "note": "Spot T3 complete; deploy STOP",
+      "swap_tx": "0x2f1565593f6e947249c1091d77354c8f7e44a47c939ce6b64426b06e2ba33f4f"
+    },
+    {
+      "id": "SM3-MEME-0010-PONS",
+      "at_jst": "2026-09-05T21:40:00+09:00",
+      "kind": "meme_buy_aborted",
+      "symbol": "PONS",
+      "notional_usd": 65,
+      "note": "M3 aborted low USDG; STOP further buys",
+      "swap_tx": null
+    }
+  ]
+}
