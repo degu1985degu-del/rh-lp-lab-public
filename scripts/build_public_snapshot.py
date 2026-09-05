@@ -12,6 +12,7 @@ OUT = Path(__file__).resolve().parents[1] / "data" / "latest.json"
 SM3_SNAP = Path("/workspace/rh-lp-lab/handoff/SM3-POST-DEPLOY-SNAP.json")
 LP_STATE = Path("/workspace/rh-lp-lab/STATE.json")
 STATIC = Path(__file__).resolve().parent / "public_snapshot_static.json"
+SPOT_COST_LEDGER = Path("/workspace/rh-lp-lab/handoff/SPOT-COST-LEDGER.json")
 
 KNOWN_FILLS = [
     {
@@ -97,34 +98,92 @@ def public_positions(raw, amount_by_sym=None):
     return out
 
 
-def public_spot(snap):
+def public_spot(snap, cost_ledger=None):
+    """Build public spot sleeve; attach cost basis from SPOT-COST-LEDGER when present."""
+    by_sym = {}
+    if isinstance(cost_ledger, dict):
+        by_sym = cost_ledger.get("by_symbol") or {}
+
+    def cost_row(sym):
+        row = by_sym.get(sym) if isinstance(by_sym.get(sym), dict) else {}
+        return row
+
+    def attach_cost(entry, sym):
+        row = cost_row(sym)
+        cost = row.get("cost_usdg") if row else None
+        entry["cost_usdg"] = cost
+        if row.get("note"):
+            entry["cost_note"] = row.get("note")
+        mark = entry.get("mark_usd")
+        if cost is not None and mark is not None:
+            try:
+                entry["unrealized_pnl_usd"] = round(float(mark) - float(cost), 6)
+            except (TypeError, ValueError):
+                entry["unrealized_pnl_usd"] = None
+        else:
+            entry["unrealized_pnl_usd"] = None
+        return entry
+
     positions = []
     for p in snap.get("spot_positions") or []:
         if not isinstance(p, dict):
             continue
-        positions.append({
-            "symbol": p.get("symbol"),
+        sym = p.get("symbol")
+        entry = {
+            "symbol": sym,
             "amount": p.get("amount_onchain"),
             "mark_usd": p.get("mark_usd"),
             "usd_per_token": p.get("usd_per_token"),
             "mark_source": p.get("mark_source"),
-        })
+        }
+        positions.append(attach_cost(entry, sym))
+
     bals = snap.get("balances") or {}
     usd = snap.get("usd_values") or {}
     residuals = []
     if bals.get("weth"):
-        residuals.append({"symbol": "WETH", "amount": bals.get("weth"), "mark_usd": usd.get("weth"), "role": "spot_residual"})
+        residuals.append(attach_cost({
+            "symbol": "WETH",
+            "amount": bals.get("weth"),
+            "mark_usd": usd.get("weth"),
+            "role": "spot_residual",
+        }, "WETH"))
     if bals.get("rblx"):
-        residuals.append({"symbol": "RBLX", "amount": bals.get("rblx"), "mark_usd": usd.get("rblx"), "role": "spot_residual"})
+        residuals.append(attach_cost({
+            "symbol": "RBLX",
+            "amount": bals.get("rblx"),
+            "mark_usd": usd.get("rblx"),
+            "role": "spot_residual",
+        }, "RBLX"))
+
+    known_cost = 0.0
+    known_pnl = 0.0
+    known_n = 0
+    for e in positions + residuals:
+        c = e.get("cost_usdg")
+        if c is None:
+            continue
+        try:
+            known_cost += float(c)
+            if e.get("unrealized_pnl_usd") is not None:
+                known_pnl += float(e["unrealized_pnl_usd"])
+            known_n += 1
+        except (TypeError, ValueError):
+            pass
+
     return {
         "positions": positions,
         "residuals": residuals,
+        "cost_usd": round(known_cost, 4) if known_n else None,
+        "unrealized_pnl_usd": round(known_pnl, 4) if known_n else None,
         "spot_tokens_sum_usd": usd.get("spot_tokens_sum_usd"),
         "spot_incl_weth_rblx_usd": usd.get("spot_incl_weth_residuals_usd"),
         "status": "HOLD",
         "source": "SM3-POST-DEPLOY-SNAP",
+        "cost_source": "SPOT-COST-LEDGER" if by_sym else None,
         "observed_at_jst": snap.get("observed_at_jst"),
     }
+
 
 
 def main():
@@ -133,6 +192,7 @@ def main():
     lp_state = load_json(LP_STATE)
     sm3 = load_json(SM3_SNAP)
     static = load_json(STATIC)
+    cost_ledger = load_json(SPOT_COST_LEDGER)
     nav, nav_name = latest_nav()
     amount_by_sym = {}
     for mp in sm3.get("meme_positions") or []:
@@ -208,7 +268,7 @@ def main():
             "source_nav_file": nav_name,
             "checked_at_jst": (sm3.get("observed_at_jst") or nav.get("checked_at_jst")),
         },
-        "spot": public_spot(sm3) if sm3 else {"positions": [], "status": "UNKNOWN"},
+        "spot": public_spot(sm3, cost_ledger) if sm3 else {"positions": [], "status": "UNKNOWN"},
         "meme": {
             "positions": pub_pos,
             "cost_usd": meme_cost,
@@ -243,6 +303,7 @@ def main():
         "notes": [
             "No secrets. No Alchemy keys. No session material.",
             "Post-SM3: LP EXITED/CLEARED. Spot 52% + Meme 46% + Gas 2%.",
+            "Spot cost_usdg from handoff/SPOT-COST-LEDGER (FILLED SM3-SPOT buys); RBLX cost null (LP-exit residual).",
             "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
             "Deploy STOP after Spot T1-T3 + Meme M1-M2; M3 aborted (low USDG).",
             "Refreshed roughly every 5 minutes when publish routine runs.",
