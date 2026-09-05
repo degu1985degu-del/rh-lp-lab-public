@@ -118,6 +118,86 @@
       "notional_usd": 65,
       "note": "M3 aborted low USDG; STOP further buys",
       "swap_tx": null
+    },
+    {
+      "id": "SM3-ALTROT-0001-NVDA-SELL",
+      "at_jst": "2026-09-05T22:51:19+09:00",
+      "kind": "spot_sell",
+      "symbol": "NVDA",
+      "notional_usd": null,
+      "note": "ALTROT full NVDA→USDG",
+      "approve_tx": "0xe2b6a12e4d9b88f5f968620a382374c3ace994233b3110b399c28b4a8e35de7e",
+      "swap_tx": "0x0054b0fe3155d3ae3ba8d0521109c99dd8de76249543953755e64be090b5dc59"
+    },
+    {
+      "id": "SM3-ALTROT-0002-COST-SELL",
+      "at_jst": "2026-09-05T22:51:53+09:00",
+      "kind": "spot_sell",
+      "symbol": "COST",
+      "notional_usd": null,
+      "note": "ALTROT full COST→USDG",
+      "approve_tx": "0xf496411cf709f0d88e1b09262424df8d9c407d233d63b6d193afcf511d350404",
+      "swap_tx": "0xec7a953d39a9d330e5f3b2bfc4b921bfbbb8dd4e15d4dc525c4cb21efc642291"
+    },
+    {
+      "id": "SM3-ALTROT-0003-TSLA-SELL",
+      "at_jst": "2026-09-05T22:52:37+09:00",
+      "kind": "spot_sell",
+      "symbol": "TSLA",
+      "notional_usd": null,
+      "note": "ALTROT full TSLA→USDG",
+      "approve_tx": "0xe37fb7b8e4190937291c88275e0e40cc028571cdbb26e24785a54398c197d262",
+      "swap_tx": "0xea74473de40eb8a69a62f9e5fee2d3dcd58671c6ac29583a4c462ff6b6043d84"
+    },
+    {
+      "id": "SM3-ALTROT-0004-AMZN-SELL",
+      "at_jst": "2026-09-05T22:53:22+09:00",
+      "kind": "spot_sell",
+      "symbol": "AMZN",
+      "notional_usd": null,
+      "note": "ALTROT full AMZN→USDG",
+      "approve_tx": "0xb41530f1a1e384aaf6408c5aaef9c77f2297f8a673c5d8cf4ef8ccc78ac4843c",
+      "swap_tx": "0xd59afdf38576e205a1dd72deb008a179fc9cba5a55f1ba0e6a16384caf58f9ae"
+    },
+    {
+      "id": "SM3-ALTROT-0005-RBLX-SELL",
+      "at_jst": "2026-09-05T22:57:13+09:00",
+      "kind": "spot_sell",
+      "symbol": "RBLX",
+      "notional_usd": null,
+      "note": "ALTROT full RBLX→USDG; Spot HOLD_USDG",
+      "approve_tx": "0xdaf943a227e6cbdceec4e9c8123e798f60755c361340de0104d2a47175227c68",
+      "swap_tx": "0xb1a87b7b93fc4bd3fa77c54e5ba48fedc8a07325751307676b443afb8d151455"
+    },
+    {
+      "id": "SM3-MEME-0012-PONS",
+      "at_jst": "2026-09-05T22:59:08+09:00",
+      "kind": "meme_buy",
+      "symbol": "PONS",
+      "notional_usd": 82,
+      "note": "ALTROT meme add; cost→282",
+      "approve_tx": "0xb68299289e6d77137fab89d45d03f3d5929f4647d9d65537ceaefd8621e5902a",
+      "swap_tx": "0xbf306873938b2bc2396ae323719bb1f775c7f093fb579971f0d719c9c41f93d7"
+    },
+    {
+      "id": "SM3-MEME-0013-NUDES",
+      "at_jst": "2026-09-05T22:59:50+09:00",
+      "kind": "meme_buy",
+      "symbol": "NUDES",
+      "notional_usd": 100,
+      "note": "ALTROT meme add; cost→275",
+      "approve_tx": "0x671a57e87f1faf4b69ae074c6aa8da69d959664945c23b50211d085ef3b9d0f5",
+      "swap_tx": "0x9464c0ac78901212b3b408ec047cfd19b0da7d2bc409f4b1300660c2fbec9650"
+    },
+    {
+      "id": "SM3-MEME-0014-NEKO",
+      "at_jst": "2026-09-05T23:00:26+09:00",
+      "kind": "meme_buy",
+      "symbol": "NEKO",
+      "notional_usd": 37,
+      "note": "ALTROT meme add; cost→282; no further buys",
+      "approve_tx": "0xc472d6568b16e6c4fc31af84797e8070642a6f0f4d76610faa52056b90fe4e86",
+      "swap_tx": "0x3ba80c3678b29424daed8b8ea668d7d60e549c317931885358f14111702301ef"
     }
   ]
 }
