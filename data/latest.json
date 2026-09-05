@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-06T06:57:40.480608+09:00",
+  "generated_at_jst": "2026-09-06T07:01:10.956163+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+sm3_altrot_post_snap",
@@ -70,44 +70,44 @@
       {
         "symbol": "PONS",
         "cost_usdg": 282,
-        "mark_usd": 420.5786,
-        "unrealized_pnl_usd": 138.5786,
+        "mark_usd": 420.72,
+        "unrealized_pnl_usd": 138.72,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T06:57:22.630084+09:00",
+        "marks_updated_at_jst": "2026-09-06T07:00:50.584713+09:00",
         "amount": 450.92745534517303
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 275,
-        "mark_usd": 272.9125,
-        "unrealized_pnl_usd": -2.0875,
+        "mark_usd": 274.9465,
+        "unrealized_pnl_usd": -0.0535,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T06:57:22.630084+09:00",
+        "marks_updated_at_jst": "2026-09-06T07:00:50.584713+09:00",
         "amount": 14376.466376775787
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 282,
-        "mark_usd": 469.3742,
-        "unrealized_pnl_usd": 187.3742,
+        "mark_usd": 477.3586,
+        "unrealized_pnl_usd": 195.3586,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T06:57:22.630084+09:00",
+        "marks_updated_at_jst": "2026-09-06T07:00:50.584713+09:00",
         "amount": 253900.40359643928
       }
     ],
     "cost_usd": 839.0,
-    "mark_usd_exit": 1162.8653,
-    "unrealized_pnl_usd": 323.8653,
+    "mark_usd_exit": 1173.0251,
+    "unrealized_pnl_usd": 334.0251,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-06T06:57:22.630084+09:00",
+    "marks_updated_at_jst": "2026-09-06T07:00:50.584713+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 2129.5949,
+    "approx_mtm_usd": 2139.7547,
     "idle_usdg_usd": 737.097387,
     "native_eth_usd": 24.391006,
     "weth_usd": 205.241239,
@@ -116,7 +116,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": 247.9049
+    "vs_b0_usd": 258.0647
   },
   "deploy": {
     "status": "STOP",
