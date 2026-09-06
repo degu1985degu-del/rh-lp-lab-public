@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-07T07:57:47.827691+09:00",
+  "generated_at_jst": "2026-09-07T08:05:31.525654+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+sm3_altrot_post_snap",
+  "mark_source": "quoter_v2_exit+previous_live_retained",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -40,7 +40,7 @@
     "note": "LP canary NFTs burned in SM3 exit; not live",
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
-    "source_nav_file": "triple-nav-rpcfail-1788735074159.json",
+    "source_nav_file": "triple-nav-rpcfail-1788735925429.json",
     "checked_at_jst": "2026-09-06T09:19:01.197801+09:00"
   },
   "spot": {
@@ -60,63 +60,65 @@
       {
         "symbol": "PONS",
         "cost_usdg": 37.0785,
-        "mark_usd": 48.1635,
-        "unrealized_pnl_usd": 11.085,
+        "mark_usd": 47.6149,
+        "unrealized_pnl_usd": 10.5364,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T07:57:15.204528+09:00",
-        "amount": 450.92745534517303
+        "marks_updated_at_jst": "2026-09-07T08:05:07.901825+09:00",
+        "amount": 59.288162854125964
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 275,
-        "mark_usd": 313.195,
-        "unrealized_pnl_usd": 38.195,
+        "mark_usd": 319.3406,
+        "unrealized_pnl_usd": 44.3406,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T07:57:15.204528+09:00",
+        "marks_updated_at_jst": "2026-09-07T08:05:07.901825+09:00",
         "amount": 14376.466376775787
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 75.9693,
-        "mark_usd": 48.6534,
-        "unrealized_pnl_usd": -27.3159,
+        "mark_usd": 41.2954,
+        "unrealized_pnl_usd": -34.6739,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T07:57:15.204528+09:00",
-        "amount": 253900.40359643928
+        "marks_updated_at_jst": "2026-09-07T08:05:07.901825+09:00",
+        "amount": 68399.40688482676
       },
       {
         "symbol": "CASHCAT",
         "cost_usdg": 100,
-        "mark_usd": 84.3807,
-        "unrealized_pnl_usd": -15.6193,
+        "mark_usd": 84.6192,
+        "unrealized_pnl_usd": -15.3808,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T07:57:15.204528+09:00",
+        "marks_updated_at_jst": "2026-09-07T08:05:07.901825+09:00",
         "amount": 391.20058176991597
       }
     ],
     "cost_usd": 488.0478,
-    "mark_usd_exit": 494.3926,
-    "unrealized_pnl_usd": 6.3448,
+    "mark_usd_exit": 492.8701,
+    "unrealized_pnl_usd": 4.8223,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-07T07:57:15.204528+09:00",
+    "marks_updated_at_jst": "2026-09-07T08:05:07.901825+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1360.8809,
-    "idle_usdg_usd": 844.379235,
+    "approx_mtm_usd": 1853.9648,
+    "idle_usdg_usd": 1338.985681,
+    "idle_usdg_source": "previous_live_retained",
+    "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
     "surplus_usdg_excluded": null,
-    "note": "approx = spot(WETH residual; stocks sold) + meme QuoterV2 exit + idle USDG + native ETH",
+    "note": "approx = idle USDG (live balanceOf each publish) + meme QuoterV2 exit + native ETH (+ spot residuals if any)",
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -520.8091
+    "vs_b0_usd": -27.7252
   },
   "deploy": {
     "status": "STOP",
@@ -133,7 +135,7 @@
       "Meme M3"
     ],
     "m3_note": "Post-ALTROT: stocks sold→USDG; meme name-cap adds done; spot HOLD_USDG + WETH hop; STOP further buys.",
-    "idle_usdg_usd": 844.379235,
+    "idle_usdg_usd": 1338.985681,
     "stop_further_buys": true,
     "spot_posture": "HOLD_USDG_CASH"
   },
@@ -363,7 +365,8 @@
   "notes": [
     "No secrets. No Alchemy keys. No session material.",
     "Post-SM3 + ALTROT: LP EXITED/CLEARED. Spot HOLD_USDG + WETH hop; stocks sold.",
-    "Balances from SM3-ALTROT-POST-SNAP live FACT when present.",
+    "Idle USDG from live on-chain balanceOf each publish (not SM3-ALTROT-POST-SNAP).",
+    "Meme amounts prefer rh-meme-lab STATE open_positions (post-ST bags).",
     "Spot cost_usdg from handoff/SPOT-COST-LEDGER; sold stocks cost-zeroed / omitted.",
     "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
     "Deploy STOP; no new spot alts / meme adds until Chief.",
