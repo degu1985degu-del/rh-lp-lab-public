@@ -14,6 +14,8 @@ Secret-free public snapshot feed + static dashboard for RH Autonomous LP Lab.
 - `docs/SOL-SNIPE-ROUTINE-REVIEW.md` — Is the current Uniswap Scout/Chief routine enough to snipe 4663 hot coins early? (research only)
 - `docs/SOL-SNIPE-SCAN-CADENCE.md` — Factory scan cadence: 5m PoolCreated vs 15–60m volume (Patch A; no Autofill)
 - `docs/SOL-LAB-ROLE-DESIGN-2026-09-06.md` — Scout/Chief skeleton vs adding trader bots (advisory; Phase 0–1)
+- `docs/SOL-VENUE-UNLOCK-SOLANA-HL-2026-09-06.md` — Axis-1 venue unlock: Solana first, HL Phase 2 only (advisory; no tickets)
+- `docs/SOL-SM3-SHORT-TERM-RULES-2026-09-06.md` — Minimal 4663 meme scalp/swing rules (paper-48h rec; Autofill OFF)
 
 ## Local preview
 ```bash
