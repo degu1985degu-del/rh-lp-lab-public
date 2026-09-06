@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-07T04:29:51.985745+09:00",
+  "generated_at_jst": "2026-09-07T04:34:41.294141+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+sm3_altrot_post_snap",
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 37.0785,
-        "mark_usd": 48.0315,
-        "unrealized_pnl_usd": 10.953,
+        "mark_usd": 47.6335,
+        "unrealized_pnl_usd": 10.555,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T04:29:25.108286+09:00",
+        "marks_updated_at_jst": "2026-09-07T04:33:56.432870+09:00",
         "amount": 450.92745534517303
       },
       {
@@ -90,24 +90,24 @@
       {
         "symbol": "CASHCAT",
         "cost_usdg": 100,
-        "mark_usd": 81.5841,
-        "unrealized_pnl_usd": -18.4159,
+        "mark_usd": 82.3869,
+        "unrealized_pnl_usd": -17.6131,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-07T04:29:25.108286+09:00",
+        "marks_updated_at_jst": "2026-09-07T04:33:56.432870+09:00",
         "amount": 391.20058176991597
       }
     ],
     "cost_usd": 488.0478,
-    "mark_usd_exit": 426.2536,
-    "unrealized_pnl_usd": -61.7942,
+    "mark_usd_exit": 426.6584,
+    "unrealized_pnl_usd": -61.3894,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-07T04:29:25.108286+09:00",
+    "marks_updated_at_jst": "2026-09-07T04:33:56.432870+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1292.7419,
+    "approx_mtm_usd": 1293.1467,
     "idle_usdg_usd": 844.379235,
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
@@ -116,7 +116,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -588.9481
+    "vs_b0_usd": -588.5433
   },
   "deploy": {
     "status": "STOP",
