@@ -13,6 +13,7 @@ Secret-free public snapshot feed + static dashboard for RH Autonomous LP Lab.
 - `docs/SOL-ARCUS-CANARY-APPENDIX.md` — Arcus on 4663: spot vs perps; recommended ≤$50 spot round-trip (appendix only; Lighter $50 untouched)
 - `docs/SOL-SNIPE-ROUTINE-REVIEW.md` — Is the current Uniswap Scout/Chief routine enough to snipe 4663 hot coins early? (research only)
 - `docs/SOL-SNIPE-SCAN-CADENCE.md` — Factory scan cadence: 5m PoolCreated vs 15–60m volume (Patch A; no Autofill)
+- `docs/SOL-LAB-ROLE-DESIGN-2026-09-06.md` — Scout/Chief skeleton vs adding trader bots (advisory; Phase 0–1)
 
 ## Local preview
 ```bash
