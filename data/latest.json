@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-06T15:59:39.253166+09:00",
+  "generated_at_jst": "2026-09-06T16:12:00.502246+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+sm3_altrot_post_snap",
@@ -40,7 +40,7 @@
     "note": "LP canary NFTs burned in SM3 exit; not live",
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
-    "source_nav_file": "triple-nav-rpcfail-1788671192611.json",
+    "source_nav_file": "triple-nav-rpcfail-1788678709986.json",
     "checked_at_jst": "2026-09-06T09:19:01.197801+09:00"
   },
   "spot": {
@@ -60,54 +60,54 @@
       {
         "symbol": "PONS",
         "cost_usdg": 282,
-        "mark_usd": 398.7984,
-        "unrealized_pnl_usd": 116.7984,
+        "mark_usd": 406.5333,
+        "unrealized_pnl_usd": 124.5333,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T15:59:20.391008+09:00",
+        "marks_updated_at_jst": "2026-09-06T16:11:30.668930+09:00",
         "amount": 450.92745534517303
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 275,
-        "mark_usd": 246.0594,
-        "unrealized_pnl_usd": -28.9406,
+        "mark_usd": 233.0138,
+        "unrealized_pnl_usd": -41.9862,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T15:59:20.391008+09:00",
+        "marks_updated_at_jst": "2026-09-06T16:11:30.668930+09:00",
         "amount": 14376.466376775787
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 282,
-        "mark_usd": 411.3066,
-        "unrealized_pnl_usd": 129.3066,
+        "mark_usd": 424.129,
+        "unrealized_pnl_usd": 142.129,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T15:59:20.391008+09:00",
+        "marks_updated_at_jst": "2026-09-06T16:11:30.668930+09:00",
         "amount": 253900.40359643928
       },
       {
         "symbol": "CASHCAT",
         "cost_usdg": 100,
-        "mark_usd": 92.8224,
-        "unrealized_pnl_usd": -7.1776,
+        "mark_usd": 92.5737,
+        "unrealized_pnl_usd": -7.4263,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-06T15:59:20.391008+09:00",
+        "marks_updated_at_jst": "2026-09-06T16:11:30.668930+09:00",
         "amount": 391.20058176991597
       }
     ],
     "cost_usd": 939.0,
-    "mark_usd_exit": 1148.9868,
-    "unrealized_pnl_usd": 209.9868,
+    "mark_usd_exit": 1156.2498,
+    "unrealized_pnl_usd": 217.2498,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-06T15:59:20.391008+09:00",
+    "marks_updated_at_jst": "2026-09-06T16:11:30.668930+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 2015.4751,
+    "approx_mtm_usd": 2022.7381,
     "idle_usdg_usd": 844.379235,
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
@@ -116,7 +116,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": 133.7851
+    "vs_b0_usd": 141.0481
   },
   "deploy": {
     "status": "STOP",
