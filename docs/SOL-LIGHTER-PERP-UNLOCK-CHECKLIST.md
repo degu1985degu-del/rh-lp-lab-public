@@ -3,7 +3,8 @@
 Sol / RH Autonomous LP Lab — **prep ONLY**  
 Date: 2026-09-06 · Status: **NOT LIVE POLICY · NOT A TICKET · NOT EXECUTION**
 
-Live mandate stays: **4663 Uniswap v3 Spot only**, `perp_pct=0`, no bot bridge / borrow / leverage / perp, Autofill OFF, Chief arms, kill floor MTM `< $1223.10`. Human directed Chief to **prepare a path**. This file is the path. It does **not** unlock anything.
+Live **order** mandate stays: no Lighter orders, no ChangePubKey, Autofill OFF, kill floor MTM `< $1223.10`.  
+**2026-09-06 human FINAL (deposit canary only):** copy-paste packet is `docs/SOL-LIGHTER-DEPOSIT-CANARY-APPENDIX.md` — USDG $50 to the official proxy, then stop.
 
 Labels: **FACT** = official docs / L2BEAT / first-party API. **INFERENCE** = labeled why. **UNKNOWN** = do not trade on it.
 
