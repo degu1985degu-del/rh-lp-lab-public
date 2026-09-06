@@ -366,7 +366,7 @@ These look like “the landscape has more alpha.” They break the live mandate.
 ## 7. Open questions (honest UNKNOWN)
 
 1. Exact **Lighter Relayer** address vs L2BEAT rollup `0x94bA…fF9d` (same system **INFERENCE**).
-2. **Arcus perps** Checkpoint Manager / Bridge Vault on 4663.
+2. **Arcus perps** Checkpoint Manager / Bridge Vault on 4663 (still UNKNOWN). See `docs/SOL-ARCUS-CANARY-APPENDIX.md` — this wallet is `403` whitelist; spot SwapShell is FACT.
 3. **RialtoRouter** official address.
 4. UniswapX **reactor** address on 4663.
 5. Whether Uniswap Earn / DualPool hooks are actually wired for **USDG on 4663**.

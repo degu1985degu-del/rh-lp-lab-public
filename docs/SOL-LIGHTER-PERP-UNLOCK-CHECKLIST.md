@@ -304,7 +304,7 @@ Suggested canary packet (still not a ticket): `$50 USDG`, `2x`, isolated, ETH-PE
 - Do not bind a Lighter API key to the lab address.  
 - Do not send USDG to any “relayer” other than the official `0x94bA…fF9d` (and not even that until FINAL).  
 - Do not use **Lighter Core** USDC/CCTP flows or `mainnet.zklighter.elliot.ai`.  
-- Do not use Arcus perps, HL, RH brokerage Futures, or EU app perps as a “substitute unlock.”  
+- Do not use Arcus **perps**, HL, RH brokerage Futures, or EU app perps as a “substitute unlock.” Spot-only Arcus packet (if ever FINAL): `docs/SOL-ARCUS-CANARY-APPENDIX.md`. Lighter $50 stays; no Fun/bridge.  
 - Do not bridge “to get more USDG” or to reach Core liquidity.  
 - Do not unlimited-approve Permit2 / Universal Router “so Lighter is easier.”  
 - Do not enable cross margin, stock-token margin, or >2x “because Wallet shows 5x.”  
