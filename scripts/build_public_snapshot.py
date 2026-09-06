@@ -2,6 +2,8 @@
 """Build secret-free public snapshot for RH LP Lab dash."""
 from __future__ import annotations
 import json
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -14,6 +16,14 @@ SM3_POST_DEPLOY_SNAP = Path("/workspace/rh-lp-lab/handoff/SM3-POST-DEPLOY-SNAP.j
 LP_STATE = Path("/workspace/rh-lp-lab/STATE.json")
 STATIC = Path(__file__).resolve().parent / "public_snapshot_static.json"
 SPOT_COST_LEDGER = Path("/workspace/rh-lp-lab/handoff/SPOT-COST-LEDGER.json")
+
+# Live USDG (same public RPC path as refresh_public_marks.py / memectl)
+PUBLIC_RPC = "https://rpc.mainnet.chain.robinhood.com"
+USDG_ADDR = "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168"
+WALLET_ADDR = "0xeb2e6effbc6e8d0362690cfdeba098d7eb6d4c7b"
+USDG_DECIMALS = 6
+# Known stale ALTROT post-snap idle — never silently re-publish as live.
+ALTROT_STALE_IDLE_USDG = 844.379235
 
 # Spot dust below this USD (or missing mark) is omitted from valued positions.
 SPOT_DUST_USD = 0.05
@@ -80,6 +90,74 @@ def _live_human(live: dict, sym: str):
     if not row:
         return None
     return _f(row.get("human"))
+
+
+
+def fetch_live_usdg_balance() -> tuple[float | None, str | None]:
+    """Read-only ERC20 balanceOf(USDG) for the lab wallet. Returns (human_usd, err)."""
+    data = "0x70a08231" + WALLET_ADDR[2:].lower().zfill(64)
+    payload = {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "eth_call",
+        "params": [{"to": USDG_ADDR, "data": data}, "latest"],
+    }
+    req = urllib.request.Request(
+        PUBLIC_RPC,
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json", "User-Agent": "rh-public-snapshot/0.2"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            body = json.loads(resp.read().decode())
+    except Exception as e:
+        return None, f"{type(e).__name__}: {e}"
+    if isinstance(body, dict) and body.get("error"):
+        return None, str(body["error"])
+    result = str((body or {}).get("result") or "")
+    if not result or result == "0x":
+        return None, "empty eth_call result"
+    try:
+        raw = int(result, 16)
+    except ValueError as e:
+        return None, f"bad hex: {e}"
+    return round(raw / (10 ** USDG_DECIMALS), 6), None
+
+
+def resolve_idle_usdg(snap_idle, prev_snap: dict) -> tuple[float | None, str, str | None]:
+    """Prefer live on-chain USDG each publish; never silently revert to stale ALTROT 844.
+
+    Fallback order on RPC failure:
+      1) previous latest.json idle if sourced live / retained-live (fresher than ALTROT)
+      2) previous idle if materially different from ALTROT_STALE_IDLE_USDG
+      3) snap idle only as last resort (explicit source label)
+    """
+    live, err = fetch_live_usdg_balance()
+    if live is not None:
+        return live, "onchain_balanceOf", None
+
+    prev_wallet = (prev_snap or {}).get("wallet") if isinstance(prev_snap, dict) else {}
+    if not isinstance(prev_wallet, dict):
+        prev_wallet = {}
+    prev_idle = _f(prev_wallet.get("idle_usdg_usd"))
+    prev_src = str(prev_wallet.get("idle_usdg_source") or "")
+    live_srcs = ("onchain_balanceOf", "previous_live_retained", "previous_non_altrot_retained")
+
+    if prev_idle is not None and (
+        prev_src in live_srcs
+        or abs(prev_idle - ALTROT_STALE_IDLE_USDG) > 0.5
+    ):
+        label = (
+            "previous_live_retained"
+            if prev_src in ("onchain_balanceOf", "previous_live_retained")
+            else "previous_non_altrot_retained"
+        )
+        return prev_idle, label, err
+
+    # Last resort: snap value, but never pretend it is live
+    snap_v = _f(snap_idle)
+    return snap_v, "sm3_altrot_post_snap_stale", err
 
 
 def normalize_altrot_to_canonical(alt: dict, deploy: dict) -> dict:
@@ -402,16 +480,19 @@ def main():
     static = load_json(STATIC)
     cost_ledger = load_json(SPOT_COST_LEDGER)
     nav, nav_name = latest_nav()
+    # Prefer STATE open_positions amounts (post-ST bags); ALTROT only fills gaps.
     amount_by_sym = {}
-    for mp in sm3.get("meme_positions") or []:
-        if isinstance(mp, dict) and mp.get("symbol"):
-            amount_by_sym[mp["symbol"]] = mp.get("amount_onchain")
-    # Prefer live meme map on ALTROT-normalized snap
     bals_memes = (sm3.get("balances") or {}).get("memes") or {}
     for sym, amt in bals_memes.items():
         if amt is not None:
             amount_by_sym[sym] = amt
+    for mp in sm3.get("meme_positions") or []:
+        if isinstance(mp, dict) and mp.get("symbol") and mp.get("amount_onchain") is not None:
+            amount_by_sym[mp["symbol"]] = mp.get("amount_onchain")
     positions = meme.get("open_positions") or []
+    for p in positions:
+        if isinstance(p, dict) and p.get("symbol") and p.get("amount") is not None:
+            amount_by_sym[p["symbol"]] = p.get("amount")
     pub_pos = public_positions(positions, amount_by_sym)
     meme_cost = sum(float(p.get("cost_usdg") or 0) for p in pub_pos)
     meme_mark = sum(float(p.get("mark_usd") or 0) for p in pub_pos if p.get("mark_usd") is not None)
@@ -428,25 +509,28 @@ def main():
         surplus_f = None
     usd = sm3.get("usd_values") or {}
     spot_incl = usd.get("spot_incl_weth_residuals_usd")
-    idle_usdg = usd.get("idle_usdg_usd")
+    prev_snap = load_json(OUT)
+    idle_usdg, idle_usdg_source, idle_usdg_err = resolve_idle_usdg(
+        usd.get("idle_usdg_usd"), prev_snap
+    )
     native_eth = usd.get("native_eth")
     approx_mtm = None
-    if spot_incl is not None:
-        try:
-            approx_mtm = float(spot_incl) + float(meme_mark)
-            if idle_usdg is not None:
-                approx_mtm += float(idle_usdg)
-            if native_eth is not None:
-                approx_mtm += float(native_eth)
-            approx_mtm = round(approx_mtm, 4)
-        except (TypeError, ValueError):
-            approx_mtm = None
+    try:
+        approx_mtm = float(meme_mark or 0.0)
+        if spot_incl is not None:
+            approx_mtm += float(spot_incl)
+        if idle_usdg is not None:
+            approx_mtm += float(idle_usdg)
+        if native_eth is not None:
+            approx_mtm += float(native_eth)
+        # spot residuals already in spot_incl; keep explicit if separately valued later
+        approx_mtm = round(approx_mtm, 4)
+    except (TypeError, ValueError):
+        approx_mtm = None
     soft = meme.get("soft_alert") if isinstance(meme.get("soft_alert"), dict) else {}
-    mark_source = (
-        "quoter_v2_exit+sm3_altrot_post_snap"
-        if sm3_source == "SM3-ALTROT-POST-SNAP"
-        else "quoter_v2_exit+sm3_post_deploy_snap"
-    )
+    mark_source = "quoter_v2_exit+live_usdg_balanceOf"
+    if idle_usdg_source != "onchain_balanceOf":
+        mark_source = f"quoter_v2_exit+{idle_usdg_source}"
     snap = {
         "schema_version": 3,
         "generated_at_jst": now.isoformat(),
@@ -505,10 +589,12 @@ def main():
         "wallet": {
             "approx_mtm_usd": approx_mtm,
             "idle_usdg_usd": idle_usdg,
+            "idle_usdg_source": idle_usdg_source,
+            "idle_usdg_rpc_error": idle_usdg_err,
             "native_eth_usd": native_eth,
             "weth_usd": usd.get("weth"),
             "surplus_usdg_excluded": surplus_f,
-            "note": "approx = spot(WETH residual; stocks sold) + meme QuoterV2 exit + idle USDG + native ETH",
+            "note": "approx = idle USDG (live balanceOf each publish) + meme QuoterV2 exit + native ETH (+ spot residuals if any)",
             "b0_frozen_usd": 1881.69,
             "target_3x_usd": 5645.07,
             "target_5x_usd": 9408.45,
@@ -538,7 +624,8 @@ def main():
         "notes": [
             "No secrets. No Alchemy keys. No session material.",
             "Post-SM3 + ALTROT: LP EXITED/CLEARED. Spot HOLD_USDG + WETH hop; stocks sold.",
-            "Balances from SM3-ALTROT-POST-SNAP live FACT when present.",
+            "Idle USDG from live on-chain balanceOf each publish (not SM3-ALTROT-POST-SNAP).",
+            "Meme amounts prefer rh-meme-lab STATE open_positions (post-ST bags).",
             "Spot cost_usdg from handoff/SPOT-COST-LEDGER; sold stocks cost-zeroed / omitted.",
             "Primary target 3x ($5645.07 from B0 $1881.69); 5x secondary only.",
             "Deploy STOP; no new spot alts / meme adds until Chief.",
@@ -547,7 +634,7 @@ def main():
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(snap, ensure_ascii=False, indent=2) + "\n")
-    print("wrote", OUT, "source=", sm3_source)
+    print("wrote", OUT, "source=", sm3_source, "idle_usdg=", idle_usdg, "idle_src=", idle_usdg_source, "approx_mtm=", approx_mtm)
 
 
 if __name__ == "__main__":
