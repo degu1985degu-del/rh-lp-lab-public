@@ -21,6 +21,7 @@ Labels: **FACT** = official docs / factory addresses / this lab’s operated rou
 - 4663は **FCFS**。ガスオークション型のメンプール・スナイプは構造的に弱い。必要なのは「ブロック内で割り込む」ことではなく、**新規ペアを数分以内に FACT して Chief に1枚渡す**こと。
 - 現状（HYPE級がほぼ出ない・4本満杯・HOLD_USDG）では、待っていること自体は合理。出た瞬間に取る装置にはなっていない。
 - **推奨はパッチA**（工場イベント監視を一次センサにする）。Autofill は付けない。
+- **頻度の続き:** `docs/SOL-SNIPE-SCAN-CADENCE.md` — 工場は Grok 床 **5分**。ダッシュ5分は工場スキャンではない。
 
 ---
 
