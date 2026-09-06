@@ -11,6 +11,7 @@ Secret-free public snapshot feed + static dashboard for RH Autonomous LP Lab.
 - `docs/SOL-LIGHTER-DEPOSIT-CANARY-APPENDIX.md` — Human FINAL packet: $50 USDG deposit only (no orders)
 - `docs/SOL-LIGHTER-ORDER-CANARY-APPENDIX.md` — Human packet: one isolated ≤2x ETH/BTC-PERP open+close (appendix only; no agent orders)
 - `docs/SOL-ARCUS-CANARY-APPENDIX.md` — Arcus on 4663: spot vs perps; recommended ≤$50 spot round-trip (appendix only; Lighter $50 untouched)
+- `docs/SOL-SNIPE-ROUTINE-REVIEW.md` — Is the current Uniswap Scout/Chief routine enough to snipe 4663 hot coins early? (research only)
 
 ## Local preview
 ```bash
