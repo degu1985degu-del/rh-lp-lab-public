@@ -3,8 +3,9 @@
 Sol / RH Autonomous LP Lab — **prep ONLY**  
 Date: 2026-09-06 · Status: **NOT LIVE POLICY · NOT A TICKET · NOT EXECUTION**
 
-Live **order** mandate stays: no Lighter orders, no ChangePubKey, Autofill OFF, kill floor MTM `< $1223.10`.  
-**2026-09-06 human FINAL (deposit canary only):** copy-paste packet is `docs/SOL-LIGHTER-DEPOSIT-CANARY-APPENDIX.md` — USDG $50 to the official proxy, then stop.
+Autofill OFF, kill floor MTM `< $1223.10`. Agent does **not** send orders.  
+**2026-09-06 human FINAL (deposit):** `docs/SOL-LIGHTER-DEPOSIT-CANARY-APPENDIX.md` — **FILLED** ($50, account 23139).  
+**2026-09-06 human: proceed to order canary:** copy-paste packet is `docs/SOL-LIGHTER-ORDER-CANARY-APPENDIX.md` — one isolated ≤2x ETH-PERP or BTC-PERP open then close. No secrets. No unlimited approve / bot bridge.
 
 Labels: **FACT** = official docs / L2BEAT / first-party API. **INFERENCE** = labeled why. **UNKNOWN** = do not trade on it.
 
@@ -20,7 +21,7 @@ No secrets. Do not invent a second Lighter address. Do not use Lighter Core (Eth
 - **地理制限（公式ニュースルーム開示）:** Wallet 分散型perpは **US / UK / Canada / Switzerland / UAE / Singapore** ほか制限地では不可。ラボ解禁の **ゲート0** は法域確認。未確認なら FINAL しない。
 - **取引は 4663 の `swap()` ではない（FACT）。** 入金・（任意で）`ChangePubKey` は EVM。注文は `api.rh.lighter.xyz` + Lighter API 鍵。Alchemy セッションだけでフル周回できるかは **UNKNOWN**（API鍵の紐付けは L1 オーナー署名が必要、公式）。
 - **リスクはレバ＋清算＋資金調達＋オラクル＋アップグレード／オペレータ。** 現本 ~$2k、kill `$1223.10`。カナリアは **≤ $50 USDG / 最大 2x / 1本** を提案。
-- **このメモは DRAFT。** 生きた `perp_pct` は 0 のまま。無制限 approve・bot ブリッジ・Autofill・human FINAL なしのチケットは禁止のまま。
+- **入金カナリアは FILLED。** 注文カナリアの手順は `docs/SOL-LIGHTER-ORDER-CANARY-APPENDIX.md`。無制限 approve・bot ブリッジ・Autofill は禁止のまま。エージェントは注文しない。
 
 ---
 
