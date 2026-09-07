@@ -4020,6 +4020,13 @@
       "baseline_usd": 1881.69,
       "pnl_usd": -131.7368,
       "quality": "estimated"
+    },
+    {
+      "at_jst": "2026-09-08T08:19:47.420959+09:00",
+      "total_assets_usd": 1750.6237,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -131.0663,
+      "quality": "estimated"
     }
   ]
 }
