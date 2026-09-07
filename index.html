@@ -61,6 +61,13 @@
   <p class="muted" style="margin-top:18px">このページは取引できません。秘密情報は含みません。データ源: <code>../data/latest.json</code>（GitHub Pagesでは <code>./data/latest.json</code>）</p>
 </main>
 <script>
+function moneyDelta(n) {
+  const v = Number(n);
+  if (!Number.isFinite(v)) return '—';
+  const sign = v > 0 ? '+' : (v < 0 ? '-' : '');
+  return `${sign}$${Math.abs(v).toFixed(2)}`;
+}
+
 async function load() {
   const urls = ['./data/latest.json', '../data/latest.json'];
   let data = null, err = null;
@@ -80,7 +87,7 @@ async function load() {
   const vsCls = vsB0 == null ? '' : (Number(vsB0) >= 0 ? 'pos' : 'neg');
   document.getElementById('kpi').innerHTML = [
     ['Wallet MTM', wallet.approx_mtm_usd != null ? `$${Number(wallet.approx_mtm_usd).toFixed(2)}` : '—'],
-    ['vs B0', vsB0 != null ? `<span class="${vsCls}">${Number(vsB0) >= 0 ? '+' : ''}$${Number(vsB0).toFixed(2)}</span>` : '—'],
+    ['vs B0', vsB0 != null ? `<span class="${vsCls}">${moneyDelta(vsB0)}</span>` : '—'],
     ['LP NAV', lp.nav_usd != null ? `$${Number(lp.nav_usd).toFixed(0)}` : '—'],
     ['LP 稼働', lp.simultaneous_usd != null ? `$${Number(lp.simultaneous_usd).toFixed(0)}` : '—'],
     ['LP 枠', `${caps.lp_max_positions || 3} / $${caps.lp_simultaneous_usd || 800}`],
@@ -111,7 +118,7 @@ function renderEquity(hist) {
   const first = pts[0].at_jst;
   const last = pts[pts.length - 1].at_jst;
   const lastVal = pts[pts.length - 1];
-  const pnlTxt = lastVal.pnl_usd == null ? 'n/a' : `${Number(lastVal.pnl_usd) >= 0 ? '+' : ''}$${Number(lastVal.pnl_usd).toFixed(2)}`;
+  const pnlTxt = lastVal.pnl_usd == null ? 'n/a' : moneyDelta(lastVal.pnl_usd);
   const q = lastVal.quality || 'estimated';
   const unavail = pts.filter(r => r.quality === 'unavailable' || r.pnl_usd == null).length;
   const partial = pts.filter(r => r.quality === 'partial').length;
@@ -123,7 +130,11 @@ function renderEquity(hist) {
   const times = valued.map(r => Date.parse(r.at_jst));
   const ys = valued.map(r => Number(r.pnl_usd));
   const t0 = Math.min(...times), t1 = Math.max(...times);
-  const yMin = Math.min(0, ...ys), yMax = Math.max(0, ...ys);
+  // Scale Y from recent points so one early incomplete MTM print does not flatten the live series.
+  const recentCut = t1 - 36 * 3600 * 1000;
+  const recentYs = ys.filter((_, i) => times[i] >= recentCut);
+  const scaleYs = recentYs.length >= 8 ? recentYs : ys;
+  const yMin = Math.min(0, ...scaleYs), yMax = Math.max(0, ...scaleYs);
   const pad = Math.max(1, (yMax - yMin) * 0.12);
   const y0 = yMin - pad, y1 = yMax + pad;
   const W = 920, H = 180, L = 44, R = 12, T = 10, B = 22;
