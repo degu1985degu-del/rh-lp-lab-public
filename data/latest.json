@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-08T02:27:43.258095+09:00",
+  "generated_at_jst": "2026-09-08T02:29:27.212688+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+previous_live_retained",
@@ -34,13 +34,13 @@
   "lp": {
     "simultaneous_usd": 0,
     "nav_usd": 0.0,
-    "start_nav_usd": 808.2457325458153,
+    "start_nav_usd": null,
     "nft_ids": [],
     "pools": [],
     "note": "LP canary NFTs burned in SM3 exit; not live",
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
-    "source_nav_file": "2026-09-05-triple-nav-2026-09-05T1934.json",
+    "source_nav_file": "triple-nav-rpcfail-1788796360210.json",
     "checked_at_jst": "2026-09-06T09:19:01.197801+09:00"
   },
   "spot": {
@@ -60,65 +60,65 @@
       {
         "symbol": "PONS",
         "cost_usdg": 0.2896,
-        "mark_usd": 0.3317,
-        "unrealized_pnl_usd": 0.0421,
+        "mark_usd": 0.3344,
+        "unrealized_pnl_usd": 0.0448,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-08T02:27:21.983509+09:00",
+        "marks_updated_at_jst": "2026-09-08T02:19:59.369845+09:00",
         "amount": 0.4631887722978591
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 275,
-        "mark_usd": 279.6624,
-        "unrealized_pnl_usd": 4.6624,
+        "mark_usd": 279.667,
+        "unrealized_pnl_usd": 4.667,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-08T02:27:21.983509+09:00",
+        "marks_updated_at_jst": "2026-09-08T02:27:24.719406+09:00",
         "amount": 14376.466376775787
       },
       {
         "symbol": "NEKO",
         "cost_usdg": 4.7481,
-        "mark_usd": 2.5874,
-        "unrealized_pnl_usd": -2.1607,
+        "mark_usd": 2.5875,
+        "unrealized_pnl_usd": -2.1606,
         "status": "CUT_INFLIGHT",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-08T02:27:21.983509+09:00",
+        "marks_updated_at_jst": "2026-09-08T02:27:24.719406+09:00",
         "amount": 4274.962930301673
       },
       {
         "symbol": "CASHCAT",
         "cost_usdg": 100,
-        "mark_usd": 77.3229,
-        "unrealized_pnl_usd": -22.6771,
+        "mark_usd": 77.3219,
+        "unrealized_pnl_usd": -22.6781,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-08T02:27:21.983509+09:00",
+        "marks_updated_at_jst": "2026-09-08T02:27:24.719406+09:00",
         "amount": 391.20058176991597
       }
     ],
     "cost_usd": 380.0377,
-    "mark_usd_exit": 359.9044,
-    "unrealized_pnl_usd": -20.1333,
+    "mark_usd_exit": 359.9108,
+    "unrealized_pnl_usd": -20.1269,
     "status": "HOLD",
     "soft_alert_active": false,
-    "marks_updated_at_jst": "2026-09-08T02:27:21.983509+09:00",
+    "marks_updated_at_jst": "2026-09-08T02:27:24.719406+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1812.7274,
+    "approx_mtm_usd": 1812.7338,
     "idle_usdg_usd": 1430.713921,
     "idle_usdg_source": "previous_live_retained",
     "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
-    "surplus_usdg_excluded": 845.527362,
+    "surplus_usdg_excluded": null,
     "note": "approx = idle USDG (live balanceOf each publish) + meme QuoterV2 exit + native ETH (+ spot residuals if any)",
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -68.9626
+    "vs_b0_usd": -68.9562
   },
   "deploy": {
     "status": "STOP",
@@ -4124,6 +4124,13 @@
       "total_assets_usd": 1812.7274,
       "baseline_usd": 1881.69,
       "pnl_usd": -68.9626,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-08T02:29:27.212688+09:00",
+      "total_assets_usd": 1812.7338,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -68.9562,
       "quality": "partial"
     }
   ]
