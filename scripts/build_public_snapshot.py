@@ -1,11 +1,25 @@
 #!/usr/bin/env python3
 """Build secret-free public snapshot for RH LP Lab dash."""
 from __future__ import annotations
+import argparse
 import json
+import sys
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+from equity_history import (  # noqa: E402
+    QUALITY_UNAVAILABLE,
+    accumulate,
+    ensure_history_note,
+    make_record,
+    record_from_live_build,
+    record_from_snapshot,
+)
 
 JST = timezone(timedelta(hours=9))
 LP_ROOT = Path("/workspace/rh-lp-lab")
@@ -632,10 +646,80 @@ def main():
             "Refreshed roughly every 5 minutes when publish routine runs.",
         ],
     }
+    attach_equity_history(
+        snap,
+        current=record_from_live_build(
+            generated_at_jst=snap["generated_at_jst"],
+            approx_mtm=approx_mtm,
+            idle_usdg_source=idle_usdg_source,
+            idle_usdg_rpc_error=idle_usdg_err,
+            mark_source=mark_source,
+            meme=snap.get("meme"),
+        ),
+        prev_snap=prev_snap,
+    )
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(snap, ensure_ascii=False, indent=2) + "\n")
-    print("wrote", OUT, "source=", sm3_source, "idle_usdg=", idle_usdg, "idle_src=", idle_usdg_source, "approx_mtm=", approx_mtm)
+    print("wrote", OUT, "source=", sm3_source, "idle_usdg=", idle_usdg, "idle_src=", idle_usdg_source, "approx_mtm=", approx_mtm, "equity_n=", len(snap.get("equity_history") or []))
+
+
+def attach_equity_history(snap: dict, current: dict | None, prev_snap: dict | None = None) -> dict:
+    """Merge current evaluation into durable history and embed equity_history."""
+    if current is None:
+        current = record_from_snapshot(snap)
+    if current is None:
+        current = make_record(
+            at_jst=snap.get("generated_at_jst") or datetime.now(JST).isoformat(),
+            total_assets_usd=None,
+            quality=QUALITY_UNAVAILABLE,
+        )
+    snap["equity_history"] = accumulate(
+        current=current,
+        prev_snap=prev_snap if prev_snap is not None else load_json(OUT),
+    )
+    snap["notes"] = ensure_history_note(snap.get("notes"))
+    return snap
+
+
+def embed_equity_only() -> None:
+    """Attach history to the existing latest.json without recomputing marks.
+
+    Used when lab trees are absent (so a full rebuild would degrade the snapshot)
+    and as a safe smoke path that still writes a real equity_history array.
+    """
+    snap = load_json(OUT)
+    if not snap:
+        raise SystemExit(f"no snapshot at {OUT}")
+    attach_equity_history(snap, current=record_from_snapshot(snap), prev_snap=snap)
+    OUT.write_text(json.dumps(snap, ensure_ascii=False, indent=2) + "\n")
+    hist = snap.get("equity_history") or []
+    first = hist[0]["at_jst"] if hist else None
+    last = hist[-1]["at_jst"] if hist else None
+    print(
+        "embedded equity_history",
+        OUT,
+        "n=",
+        len(hist),
+        "first=",
+        first,
+        "last=",
+        last,
+    )
+
+
+def parse_args(argv=None):
+    p = argparse.ArgumentParser(description="Build secret-free public snapshot")
+    p.add_argument(
+        "--embed-equity-only",
+        action="store_true",
+        help="Only accumulate/embed equity_history into existing latest.json",
+    )
+    return p.parse_args(argv)
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    if args.embed_equity_only:
+        embed_equity_only()
+    else:
+        main()
