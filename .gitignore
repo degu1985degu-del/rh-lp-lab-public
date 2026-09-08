@@ -3,3 +3,5 @@
 .env.*
 **/wallet-session.json
 **/config.json
+__pycache__/
+site/
