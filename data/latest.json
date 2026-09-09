@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-09T09:10:50.295143+09:00",
+  "generated_at_jst": "2026-09-09T09:12:50.300907+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+previous_live_retained",
@@ -64,17 +64,17 @@
         "unrealized_pnl_usd": 0.0011,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-09T09:10:30.023130+09:00",
+        "marks_updated_at_jst": "2026-09-09T09:12:30.894374+09:00",
         "amount": 0.007237324567154049
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 2.1484,
-        "mark_usd": 1.1953,
-        "unrealized_pnl_usd": -0.9531,
+        "mark_usd": 1.1634,
+        "unrealized_pnl_usd": -0.985,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-09T09:10:30.023130+09:00",
+        "marks_updated_at_jst": "2026-09-09T09:12:30.894374+09:00",
         "amount": 112.31614356856083
       },
       {
@@ -90,24 +90,24 @@
       {
         "symbol": "CASHCAT",
         "cost_usdg": 1.5631,
-        "mark_usd": 1.1337,
-        "unrealized_pnl_usd": -0.4294,
+        "mark_usd": 1.1349,
+        "unrealized_pnl_usd": -0.4282,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-09T09:10:30.023130+09:00",
+        "marks_updated_at_jst": "2026-09-09T09:12:30.894374+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 3.7161,
-    "mark_usd_exit": 2.3347,
-    "unrealized_pnl_usd": -1.3814,
+    "mark_usd_exit": 2.304,
+    "unrealized_pnl_usd": -1.4121,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-09T09:10:30.023130+09:00",
+    "marks_updated_at_jst": "2026-09-09T09:12:30.894374+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1713.0079,
+    "approx_mtm_usd": 1712.9772,
     "idle_usdg_usd": 1688.5641,
     "idle_usdg_source": "previous_live_retained",
     "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -168.6821
+    "vs_b0_usd": -168.7128
   },
   "deploy": {
     "status": "STOP",
@@ -5790,6 +5790,13 @@
       "total_assets_usd": 1713.0079,
       "baseline_usd": 1881.69,
       "pnl_usd": -168.6821,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-09T09:12:50.300907+09:00",
+      "total_assets_usd": 1712.9772,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -168.7128,
       "quality": "partial"
     }
   ]
