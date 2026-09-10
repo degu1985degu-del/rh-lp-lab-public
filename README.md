@@ -12,6 +12,9 @@ Secret-free public snapshot feed + static dashboard for RH Autonomous LP Lab.
   - `quality` is `estimated` | `partial` (retained fallback, e.g. RPC 429 idle USDG) | `unavailable` (numerics `null`, never coerced to 0)
   - Front-ends (including ChatGPT Sites) can plot `equity_history`; this repo also draws a small PnL chart on `index.html`
 
+## Docs
+- `docs/SOL-CLUE-DESIGN-3X.md` — Sol memo: HOT NAME clue weights for the 3× path (secret-free)
+
 ## Local preview
 ```bash
 python3 -m http.server 8080
