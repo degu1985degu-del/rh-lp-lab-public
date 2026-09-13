@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-13T20:39:30.621482+09:00",
+  "generated_at_jst": "2026-09-13T20:42:58.361201+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
+  "mark_source": "quoter_v2_exit+previous_live_retained",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 128.2892,
-        "unrealized_pnl_usd": -54.7154,
+        "mark_usd": 128.3563,
+        "unrealized_pnl_usd": -54.6483,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-13T20:39:07.671772+09:00",
+        "marks_updated_at_jst": "2026-09-13T20:42:19.380346+09:00",
         "amount": 234.71382041797239
       },
       {
@@ -90,27 +90,27 @@
       {
         "symbol": "CASHCAT",
         "cost_usdg": 1.5631,
-        "mark_usd": 0.9676,
-        "unrealized_pnl_usd": -0.5955,
+        "mark_usd": 0.9679,
+        "unrealized_pnl_usd": -0.5952,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-13T20:39:07.671772+09:00",
+        "marks_updated_at_jst": "2026-09-13T20:42:19.380346+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 129.2907,
-    "unrealized_pnl_usd": -55.5456,
+    "mark_usd_exit": 129.3581,
+    "unrealized_pnl_usd": -55.4782,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-13T20:39:07.671772+09:00",
+    "marks_updated_at_jst": "2026-09-13T20:42:19.380346+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1657.9413,
+    "approx_mtm_usd": 1658.0087,
     "idle_usdg_usd": 1506.54154,
-    "idle_usdg_source": "onchain_balanceOf",
-    "idle_usdg_rpc_error": null,
+    "idle_usdg_source": "previous_live_retained",
+    "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
     "surplus_usdg_excluded": null,
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -223.7487
+    "vs_b0_usd": -223.6813
   },
   "deploy": {
     "status": "STOP",
@@ -9220,6 +9220,13 @@
       "total_assets_usd": 1657.9413,
       "baseline_usd": 1881.69,
       "pnl_usd": -223.7487,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-13T20:42:58.361201+09:00",
+      "total_assets_usd": 1658.0087,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -223.6813,
       "quality": "partial"
     }
   ]
