@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-14T04:58:04.337449+09:00",
+  "generated_at_jst": "2026-09-14T05:15:17.766666+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+previous_live_retained",
+  "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -60,21 +60,21 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 133.0603,
-        "unrealized_pnl_usd": -49.9443,
+        "mark_usd": 132.1465,
+        "unrealized_pnl_usd": -50.8581,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-14T04:57:46.270414+09:00",
+        "marks_updated_at_jst": "2026-09-14T05:14:58.992391+09:00",
         "amount": 234.71382041797239
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 0.2686,
-        "mark_usd": 0.0305,
-        "unrealized_pnl_usd": -0.2381,
+        "mark_usd": 0.0309,
+        "unrealized_pnl_usd": -0.2377,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-14T04:57:46.270414+09:00",
+        "marks_updated_at_jst": "2026-09-14T05:14:58.992391+09:00",
         "amount": 14.039517946070104
       },
       {
@@ -84,33 +84,33 @@
         "unrealized_pnl_usd": 0.0,
         "status": "CLOSED",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-14T03:59:06.052708+09:00",
+        "marks_updated_at_jst": "2026-09-14T05:02:52.663209+09:00",
         "amount": 0.0
       },
       {
         "symbol": "CASHCAT",
         "cost_usdg": 1.5631,
-        "mark_usd": 1.0244,
-        "unrealized_pnl_usd": -0.5387,
+        "mark_usd": 1.0251,
+        "unrealized_pnl_usd": -0.538,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-14T04:57:46.270414+09:00",
+        "marks_updated_at_jst": "2026-09-14T05:14:58.992391+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 134.1152,
-    "unrealized_pnl_usd": -50.7211,
+    "mark_usd_exit": 133.2025,
+    "unrealized_pnl_usd": -51.6338,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-14T04:57:46.270414+09:00",
+    "marks_updated_at_jst": "2026-09-14T05:14:58.992391+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1662.7658,
+    "approx_mtm_usd": 1661.8531,
     "idle_usdg_usd": 1506.54154,
-    "idle_usdg_source": "previous_live_retained",
-    "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
+    "idle_usdg_source": "onchain_balanceOf",
+    "idle_usdg_rpc_error": null,
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
     "surplus_usdg_excluded": null,
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -218.9242
+    "vs_b0_usd": -219.8369
   },
   "deploy": {
     "status": "STOP",
@@ -9697,6 +9697,13 @@
       "baseline_usd": 1881.69,
       "pnl_usd": -218.9242,
       "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-14T05:15:17.766666+09:00",
+      "total_assets_usd": 1661.8531,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -219.8369,
+      "quality": "estimated"
     }
   ]
 }
