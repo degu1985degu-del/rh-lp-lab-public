@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-14T04:29:38.475579+09:00",
+  "generated_at_jst": "2026-09-14T04:33:01.830285+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+previous_live_retained",
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 132.3242,
-        "unrealized_pnl_usd": -50.6804,
+        "mark_usd": 132.1447,
+        "unrealized_pnl_usd": -50.8599,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-14T04:29:15.222726+09:00",
+        "marks_updated_at_jst": "2026-09-14T04:32:14.068706+09:00",
         "amount": 234.71382041797239
       },
       {
@@ -99,15 +99,15 @@
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 133.381,
-    "unrealized_pnl_usd": -51.4553,
+    "mark_usd_exit": 133.2015,
+    "unrealized_pnl_usd": -51.6348,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-14T04:29:15.222726+09:00",
+    "marks_updated_at_jst": "2026-09-14T04:32:14.068706+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1662.0316,
+    "approx_mtm_usd": 1661.8521,
     "idle_usdg_usd": 1506.54154,
     "idle_usdg_source": "previous_live_retained",
     "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -219.6584
+    "vs_b0_usd": -219.8379
   },
   "deploy": {
     "status": "STOP",
@@ -9654,6 +9654,13 @@
       "total_assets_usd": 1662.0316,
       "baseline_usd": 1881.69,
       "pnl_usd": -219.6584,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-14T04:33:01.830285+09:00",
+      "total_assets_usd": 1661.8521,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -219.8379,
       "quality": "partial"
     }
   ]
