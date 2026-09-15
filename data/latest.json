@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-15T13:48:41.612433+09:00",
+  "generated_at_jst": "2026-09-15T13:53:42.615411+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 147.0349,
-        "unrealized_pnl_usd": -35.9697,
+        "mark_usd": 147.2325,
+        "unrealized_pnl_usd": -35.7721,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-15T13:48:23.333645+09:00",
+        "marks_updated_at_jst": "2026-09-15T13:53:25.480784+09:00",
         "amount": 234.71382041797239
       },
       {
@@ -74,7 +74,7 @@
         "unrealized_pnl_usd": -0.2302,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-15T13:48:23.333645+09:00",
+        "marks_updated_at_jst": "2026-09-15T13:53:25.480784+09:00",
         "amount": 14.039517946070104
       },
       {
@@ -90,24 +90,24 @@
       {
         "symbol": "CASHCAT",
         "cost_usdg": 1.5631,
-        "mark_usd": 0.9544,
-        "unrealized_pnl_usd": -0.6087,
+        "mark_usd": 0.9538,
+        "unrealized_pnl_usd": -0.6093,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-15T13:48:23.333645+09:00",
+        "marks_updated_at_jst": "2026-09-15T13:53:25.480784+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 148.0277,
-    "unrealized_pnl_usd": -36.8086,
+    "mark_usd_exit": 148.2247,
+    "unrealized_pnl_usd": -36.6116,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-15T13:48:23.333645+09:00",
+    "marks_updated_at_jst": "2026-09-15T13:53:25.480784+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1676.6783,
+    "approx_mtm_usd": 1676.8753,
     "idle_usdg_usd": 1506.54154,
     "idle_usdg_source": "onchain_balanceOf",
     "idle_usdg_rpc_error": null,
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -205.0117
+    "vs_b0_usd": -204.8147
   },
   "deploy": {
     "status": "STOP",
@@ -10935,6 +10935,13 @@
       "total_assets_usd": 1676.6783,
       "baseline_usd": 1881.69,
       "pnl_usd": -205.0117,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-15T13:53:42.615411+09:00",
+      "total_assets_usd": 1676.8753,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -204.8147,
       "quality": "partial"
     }
   ]
