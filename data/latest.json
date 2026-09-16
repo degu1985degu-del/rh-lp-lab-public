@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-16T17:41:03.243627+09:00",
+  "generated_at_jst": "2026-09-16T17:43:40.886409+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 137.4022,
-        "unrealized_pnl_usd": -45.6024,
+        "mark_usd": 137.0648,
+        "unrealized_pnl_usd": -45.9398,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-16T17:40:42.755442+09:00",
+        "marks_updated_at_jst": "2026-09-16T17:43:22.049265+09:00",
         "amount": 234.71382041797239
       },
       {
@@ -74,7 +74,7 @@
         "unrealized_pnl_usd": -0.2309,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-16T17:40:42.755442+09:00",
+        "marks_updated_at_jst": "2026-09-16T17:43:22.049265+09:00",
         "amount": 14.039517946070104
       },
       {
@@ -94,20 +94,20 @@
         "unrealized_pnl_usd": -0.6372,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-16T17:40:42.755442+09:00",
+        "marks_updated_at_jst": "2026-09-16T17:43:22.049265+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 138.3658,
-    "unrealized_pnl_usd": -46.4705,
+    "mark_usd_exit": 138.0284,
+    "unrealized_pnl_usd": -46.8079,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-16T17:40:42.755442+09:00",
+    "marks_updated_at_jst": "2026-09-16T17:43:22.049265+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1667.0164,
+    "approx_mtm_usd": 1666.679,
     "idle_usdg_usd": 1506.54154,
     "idle_usdg_source": "onchain_balanceOf",
     "idle_usdg_rpc_error": null,
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -214.6736
+    "vs_b0_usd": -215.011
   },
   "deploy": {
     "status": "STOP",
@@ -11964,6 +11964,13 @@
       "total_assets_usd": 1667.0164,
       "baseline_usd": 1881.69,
       "pnl_usd": -214.6736,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-16T17:43:40.886409+09:00",
+      "total_assets_usd": 1666.679,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -215.011,
       "quality": "partial"
     }
   ]
