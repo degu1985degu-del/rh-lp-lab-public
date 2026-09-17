@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-17T14:36:49.519540+09:00",
+  "generated_at_jst": "2026-09-17T14:42:41.820350+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
@@ -60,21 +60,21 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 149.4698,
-        "unrealized_pnl_usd": -33.5348,
+        "mark_usd": 148.9596,
+        "unrealized_pnl_usd": -34.045,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-17T14:36:30.255314+09:00",
+        "marks_updated_at_jst": "2026-09-17T14:42:22.771294+09:00",
         "amount": 234.71382041797239
       },
       {
         "symbol": "NUDES",
         "cost_usdg": 0.2686,
-        "mark_usd": 0.0414,
-        "unrealized_pnl_usd": -0.2272,
+        "mark_usd": 0.0409,
+        "unrealized_pnl_usd": -0.2277,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-17T14:36:30.255314+09:00",
+        "marks_updated_at_jst": "2026-09-17T14:42:22.771294+09:00",
         "amount": 14.039517946070104
       },
       {
@@ -90,24 +90,24 @@
       {
         "symbol": "CASHCAT",
         "cost_usdg": 1.5631,
-        "mark_usd": 1.1567,
-        "unrealized_pnl_usd": -0.4064,
+        "mark_usd": 1.1554,
+        "unrealized_pnl_usd": -0.4077,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-17T14:36:30.255314+09:00",
+        "marks_updated_at_jst": "2026-09-17T14:42:22.771294+09:00",
         "amount": 6.112509090154937
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 150.6679,
-    "unrealized_pnl_usd": -34.1684,
+    "mark_usd_exit": 150.1559,
+    "unrealized_pnl_usd": -34.6804,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-17T14:36:30.255314+09:00",
+    "marks_updated_at_jst": "2026-09-17T14:42:22.771294+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1679.3185,
+    "approx_mtm_usd": 1678.8065,
     "idle_usdg_usd": 1506.54154,
     "idle_usdg_source": "onchain_balanceOf",
     "idle_usdg_rpc_error": null,
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -202.3715
+    "vs_b0_usd": -202.8835
   },
   "deploy": {
     "status": "STOP",
@@ -12741,6 +12741,13 @@
       "total_assets_usd": 1679.3185,
       "baseline_usd": 1881.69,
       "pnl_usd": -202.3715,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-17T14:42:41.820350+09:00",
+      "total_assets_usd": 1678.8065,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -202.8835,
       "quality": "partial"
     }
   ]
