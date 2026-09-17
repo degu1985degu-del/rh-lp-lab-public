@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-18T02:44:34.888033+09:00",
+  "generated_at_jst": "2026-09-18T02:45:44.271554+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
@@ -13207,6 +13207,13 @@
     },
     {
       "at_jst": "2026-09-18T02:44:34.888033+09:00",
+      "total_assets_usd": 1680.991,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -200.699,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-18T02:45:44.271554+09:00",
       "total_assets_usd": 1680.991,
       "baseline_usd": 1881.69,
       "pnl_usd": -200.699,
