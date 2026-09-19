@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-19T09:53:53.190112+09:00",
+  "generated_at_jst": "2026-09-19T10:00:17.174019+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+previous_live_retained",
@@ -40,7 +40,7 @@
     "note": "LP canary NFTs burned in SM3 exit; not live",
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
-    "source_nav_file": "triple-nav-rpcfail-1789775738442.json",
+    "source_nav_file": "triple-nav-rpcfail-1789779606751.json",
     "checked_at_jst": "2026-09-06T09:19:01.197801+09:00"
   },
   "spot": {
@@ -60,11 +60,11 @@
       {
         "symbol": "PONS",
         "cost_usdg": 183.0046,
-        "mark_usd": 159.3792,
-        "unrealized_pnl_usd": -23.6254,
+        "mark_usd": 159.7907,
+        "unrealized_pnl_usd": -23.2139,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-19T09:53:33.886470+09:00",
+        "marks_updated_at_jst": "2026-09-19T09:59:36.699278+09:00",
         "amount": 234.71382041797239
       },
       {
@@ -99,15 +99,15 @@
       }
     ],
     "cost_usd": 184.83630000000002,
-    "mark_usd_exit": 160.8253,
-    "unrealized_pnl_usd": -24.011,
+    "mark_usd_exit": 161.2368,
+    "unrealized_pnl_usd": -23.5995,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-19T09:53:33.886470+09:00",
+    "marks_updated_at_jst": "2026-09-19T09:59:36.699278+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
-    "approx_mtm_usd": 1689.4759,
+    "approx_mtm_usd": 1689.8874,
     "idle_usdg_usd": 1506.54154,
     "idle_usdg_source": "previous_live_retained",
     "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
@@ -118,7 +118,7 @@
     "b0_frozen_usd": 1881.69,
     "target_3x_usd": 5645.07,
     "target_5x_usd": 9408.45,
-    "vs_b0_usd": -192.2141
+    "vs_b0_usd": -191.8026
   },
   "deploy": {
     "status": "STOP",
@@ -14519,6 +14519,13 @@
       "total_assets_usd": 1689.4759,
       "baseline_usd": 1881.69,
       "pnl_usd": -192.2141,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-19T10:00:17.174019+09:00",
+      "total_assets_usd": 1689.8874,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -191.8026,
       "quality": "partial"
     }
   ]
