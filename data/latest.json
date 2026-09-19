@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-19T10:46:52.237083+09:00",
+  "generated_at_jst": "2026-09-19T10:52:04.862459+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
   "mark_source": "quoter_v2_exit+previous_live_retained",
@@ -40,7 +40,7 @@
     "note": "LP canary NFTs burned in SM3 exit; not live",
     "status": "EXITED/CLEARED",
     "npm_balanceOf": 0,
-    "source_nav_file": "triple-nav-rpcfail-1789782406097.json",
+    "source_nav_file": "triple-nav-rpcfail-1789782718721.json",
     "checked_at_jst": "2026-09-06T09:19:01.197801+09:00"
   },
   "spot": {
@@ -103,7 +103,7 @@
     "unrealized_pnl_usd": -24.2859,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-19T10:46:31.021312+09:00",
+    "marks_updated_at_jst": "2026-09-19T10:51:09.550808+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
@@ -14572,6 +14572,13 @@
     },
     {
       "at_jst": "2026-09-19T10:46:52.237083+09:00",
+      "total_assets_usd": 1689.201,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -192.489,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-19T10:52:04.862459+09:00",
       "total_assets_usd": 1689.201,
       "baseline_usd": 1881.69,
       "pnl_usd": -192.489,
