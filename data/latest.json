@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
-  "generated_at_jst": "2026-09-19T10:36:23.042762+09:00",
+  "generated_at_jst": "2026-09-19T10:40:27.040507+09:00",
   "label": "READ-ONLY PUBLIC SNAPSHOT",
   "live": true,
-  "mark_source": "quoter_v2_exit+live_usdg_balanceOf",
+  "mark_source": "quoter_v2_exit+previous_live_retained",
   "lab": {
     "name": "RH Autonomous LP Lab",
     "chain_id": 4663,
@@ -94,7 +94,7 @@
         "unrealized_pnl_usd": -0.1955,
         "status": "HOLD",
         "mark_source": "quoter_v2_exit",
-        "marks_updated_at_jst": "2026-09-19T10:31:38.677523+09:00",
+        "marks_updated_at_jst": "2026-09-19T10:39:45.887006+09:00",
         "amount": 6.112509090154937
       }
     ],
@@ -103,14 +103,14 @@
     "unrealized_pnl_usd": -25.2043,
     "status": "HOLD",
     "soft_alert_active": true,
-    "marks_updated_at_jst": "2026-09-19T10:35:27.109501+09:00",
+    "marks_updated_at_jst": "2026-09-19T10:39:45.887006+09:00",
     "marks_note": "Exit marks via QuoterV2 full-size; PONS/NUDES/NEKO only (MEME sold)"
   },
   "wallet": {
     "approx_mtm_usd": 1688.2826,
     "idle_usdg_usd": 1506.54154,
-    "idle_usdg_source": "onchain_balanceOf",
-    "idle_usdg_rpc_error": null,
+    "idle_usdg_source": "previous_live_retained",
+    "idle_usdg_rpc_error": "HTTPError: HTTP Error 429: Too Many Requests",
     "native_eth_usd": 22.109062,
     "weth_usd": 0.0,
     "surplus_usdg_excluded": null,
@@ -14558,6 +14558,13 @@
     },
     {
       "at_jst": "2026-09-19T10:36:23.042762+09:00",
+      "total_assets_usd": 1688.2826,
+      "baseline_usd": 1881.69,
+      "pnl_usd": -193.4074,
+      "quality": "partial"
+    },
+    {
+      "at_jst": "2026-09-19T10:40:27.040507+09:00",
       "total_assets_usd": 1688.2826,
       "baseline_usd": 1881.69,
       "pnl_usd": -193.4074,
